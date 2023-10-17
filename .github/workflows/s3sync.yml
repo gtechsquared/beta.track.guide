@@ -1,0 +1,56 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js s3 sync
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy-s3:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: |
+          cat <<EOF > ./src/secrets.js
+          const secrets = {
+            bingKey: '${{ secrets.BING_KEY }}',
+            thunderforestKey: '${{ secrets.THUNDERFOREST_KEY }}',
+            sentryDSN: '${{ secrets.SENTRY_DSN }}',
+            mapillary: '${{ secrets.MAPILLARY_KEY}}',
+            flickr: '${{ secrets.FLICKER_KEY}}',
+            google: '${{ secrets.GOOGLE_KEY}}'
+          };
+
+          export default secrets;
+          EOF
+      - run: yarn run test
+        env:
+          CI: true   
+      - run: NODE_ENV=production yarn run build --if-present
+      - name: s3 sync
+        uses: yalamber/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: 'map.mutant.kiwi'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_REGION: 'ap-southeast-2'
+          SOURCE_DIR: 'build'
