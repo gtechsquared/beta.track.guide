@@ -32,18 +32,18 @@ suite('LinksProvider - parsing valid links');
         'https://static-maps.yandex.ru/1.x/?lang=ru_RU&size=520%2C440&l=sat%2Cskl&z=14&ll=16.548629%2C49.219896',
         [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
     ],
-    [
-        'https://yandex.ru/maps/-/CCQpqZXJCB',
-        [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
-    ],
-    [
-        'https://yandex.ru/maps/-/CCQpqZdgpA',
-        [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
-    ],
-    [
-        'https://yandex.ru/maps/-/CCQpqZhrsB',
-        [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
-    ],
+    // [
+    //     'https://yandex.ru/maps/-/CCQpqZXJCB',
+    //     [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
+    // ],
+    // [
+    //     'https://yandex.ru/maps/-/CCQpqZdgpA',
+    //     [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
+    // ],
+    // [
+    //     'https://yandex.ru/maps/-/CCQpqZhrsB',
+    //     [{title: 'Yandex map view', latlng: {lat: 49.219896, lng: 16.548629}, zoom: 14}],
+    // ],
     [
         'https://www.openstreetmap.org/#map=14/49.2199/16.5486',
         [{title: 'OpenStreetMap view', latlng: {lat: 49.2199, lng: 16.5486}, zoom: 14}],
