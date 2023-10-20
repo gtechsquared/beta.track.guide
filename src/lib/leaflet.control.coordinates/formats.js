@@ -124,7 +124,6 @@ const DEGREES_AND_MINUTES_AND_SECONDS = {
     formatter: ({intDegrees, intMinutes, seconds, direction}) => `${direction} ${intDegrees}°${intMinutes}′${seconds}″`
 };
 
-
 const UTM = {
     code: 'UTM',
     label: 'UTM',
