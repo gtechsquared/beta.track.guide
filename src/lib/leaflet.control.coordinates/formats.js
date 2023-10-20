@@ -1,3 +1,8 @@
+import _UTM from './utm';
+import _UTMREF from './utmref';
+import _QTH from './qth';
+import _NAC from './nac';
+
 function truncToFixed(x, precision) {
     let s = x.toString();
     let point = s.indexOf('.');
@@ -85,10 +90,39 @@ const DEGREES_AND_MINUTES_AND_SECONDS = {
     formatter: ({intDegrees, intMinutes, seconds, direction}) => `${direction} ${intDegrees}°${intMinutes}′${seconds}″`
 };
 
+
+const UTM = {
+    code: 'UTM',
+    label: 'UTM',
+    wrapperClass: 'leaflet-coordinates-wrapper-degrees-and-minutes-and-seconds'
+};
+
+const UTMREF = {
+    code: 'UTMREF',
+    label: 'UTM REF',
+    wrapperClass: 'leaflet-coordinates-wrapper-degrees-and-minutes-and-seconds'
+};
+
+const QTH = {
+    code: 'QTH',
+    label: 'QTH',
+    wrapperClass: 'leaflet-coordinates-wrapper-degrees-and-minutes-and-seconds'
+};
+
+const NAC = {
+    code: 'NAC',
+    label: 'NAC',
+    wrapperClass: 'leaflet-coordinates-wrapper-degrees-and-minutes-and-seconds'
+};
+
 export {
     SIGNED_DEGREES,
     DEGREES,
     DEGREES_AND_MINUTES,
     DEGREES_AND_MINUTES_AND_SECONDS,
-    formatLatLng
+    formatLatLng,
+    UTM,
+    UTMREF,
+    QTH,
+    NAC,
 };

@@ -23,7 +23,11 @@ L.Control.Coordinates = L.Control.extend({
             formats.SIGNED_DEGREES,
             formats.DEGREES,
             formats.DEGREES_AND_MINUTES,
-            formats.DEGREES_AND_MINUTES_AND_SECONDS
+            formats.DEGREES_AND_MINUTES_AND_SECONDS,
+            formats.UTM,
+            formats.UTMREF,
+            formats.QTH,
+            formats.NAC
         ],
 
         initialize: function(options) {
