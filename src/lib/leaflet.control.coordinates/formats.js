@@ -55,10 +55,44 @@ function coordinatePresentations(coordinate, isLat) {
     };
 }
 
+// function formatLatLng(latlng, format) {
+//     return {
+//         lat: format.formatter(coordinatePresentations(latlng.lat, true)),
+//         lng: format.formatter(coordinatePresentations(latlng.lng, false))
+//     };
+// }
+
 function formatLatLng(latlng, format) {
+    if (['UTM', 'UTMREF', 'QTH', 'NAC'].indexOf(format.code) !== -1) {
+        let codex = '';
+        switch (format.code) {
+            case 'UTM':
+                codex = _UTM.fromLatLng(latlng);
+                codex = `${codex.zone}, E ${codex.x}, N ${codex.y}`;
+                break;
+            case 'UTMREF':
+                codex = _UTMREF.fromUTM(_UTM.fromLatLng(latlng));
+                codex = `${codex.zone}, ${codex.band}, E ${codex.x},  N ${codex.y}`;
+                break;
+            case 'QTH':
+                codex = _QTH.fromLatLng(latlng);
+                break;
+            case 'NAC':
+                codex = _NAC.fromLatLng(latlng);
+                codex = `X ${codex['x']}, Y ${codex['y']}`;
+                break;
+            default:
+        }
+        return {
+            lat: '',
+            lng: '',
+            codex
+        };
+    }
     return {
         lat: format.formatter(coordinatePresentations(latlng.lat, true)),
-        lng: format.formatter(coordinatePresentations(latlng.lng, false))
+        lng: format.formatter(coordinatePresentations(latlng.lng, false)),
+        codex: ''
     };
 }
 
