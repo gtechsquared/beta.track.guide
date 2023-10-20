@@ -11,7 +11,8 @@ import * as formats from './formats';
 const DEFAULT_FORMAT = formats.DEGREES;
 const UNKNOWN_COORDINATES = {
     lat: '-------',
-    lng: '-------'
+    lng: '-------',
+    codex: '-------',
 };
 
 L.Control.Coordinates = L.Control.extend({
@@ -75,6 +76,7 @@ L.Control.Coordinates = L.Control.extend({
                     <div class="leaflet-coordinates-container" data-bind="with: formattedCoordinates()">
                         <span class="leaflet-coordinates-latitude" data-bind="html: lat"></span>
                         <span class="leaflet-coordinates-longitude" data-bind="html: lng"></span>
+                        <span class="leaflet-coordinates-codex" data-bind="html: codex"></span>
                     </div>
                     <hr class="leaflet-coordinates-divider" />
                     <div data-bind="foreach: formats">
@@ -138,8 +140,8 @@ L.Control.Coordinates = L.Control.extend({
             L.DomEvent.stop(e);
 
             function createItem(format, options = {}) {
-                const {lat, lng} = formats.formatLatLng(e.latlng.wrap(), format);
-                const coordinates = `${lat} ${lng}`;
+                const {lat, lng, codex} = formats.formatLatLng(e.latlng.wrap(), format);
+                const coordinates = `${lat} ${lng} ${codex}`;
 
                 return {text: `${coordinates} <span class="leaflet-coordinates-menu-fmt">${format.label}</span>`,
                     callback: () => copyToClipboard(coordinates, e.originalEvent),
