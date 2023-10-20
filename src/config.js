@@ -2,10 +2,9 @@ import secrets from './secrets';
 
 const config = {
     caption: `
-        <a href="https://docs.nakarte.me">Documentation</a> |
-        <a href="https://about.nakarte.me">News</a> |
-        <a href="mailto:nakarte@nakarte.me" target="_self">nakarte@nakarte.me</a> |
-        <a href="https://about.nakarte.me/p/blog-page_29.html">Donate</a>`,
+        <a href="https://help.track.guide">Documentation</a> |
+        <a href="https://blog.track.guide">News</a> |
+        <a href="mailto:hello@track.guide" target="_self">hello@track.guide</a>`,
     defaultLocation: [49.73868, 33.45886],
     defaultZoom: 8,
     googleApiUrl: `https://maps.googleapis.com/maps/api/js?v=3&key=${secrets.google}`,
