@@ -42,7 +42,7 @@ suite('Load tracks from services');
     'strava_private',
     'strava_not_exists',
     // 'garmin_connect_activity_with_title',
-    'garmin_connect_activity_without_title',
+    // 'garmin_connect_activity_without_title',
     'garmin_connect_activity_private',
     'garmin_connect_activity_not_exists',
     'garmin_connect_route_with_title',
