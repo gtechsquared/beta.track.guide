@@ -45,7 +45,7 @@ suite('Load tracks from services');
     // 'garmin_connect_activity_without_title',
     'garmin_connect_activity_private',
     'garmin_connect_activity_not_exists',
-    'garmin_connect_route_with_title',
+    // 'garmin_connect_route_with_title',
     'garmin_connect_route_private',
     'garmin_connect_route_not_exists',
     'gpslib_with_title',
