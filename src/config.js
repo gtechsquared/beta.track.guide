@@ -5,7 +5,7 @@ const config = {
         <a href="https://help.track.guide">Documentation</a> |
         <a href="https://blog.track.guide">News</a> |
         <a href="mailto:hello@track.guide" target="_self">hello@track.guide</a>`,
-    defaultLocation: [49.73868, 33.45886],
+    defaultLocation: [-27.53476, 153.05225],
     defaultZoom: 8,
     googleApiUrl: `https://maps.googleapis.com/maps/api/js?v=3&key=${secrets.google}`,
     westraDataBaseUrl: 'https://nakarte.me/westraPasses/',
