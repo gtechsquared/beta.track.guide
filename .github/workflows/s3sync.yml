@@ -33,9 +33,10 @@ jobs:
             bingKey: '${{ secrets.BING_KEY }}',
             thunderforestKey: '${{ secrets.THUNDERFOREST_KEY }}',
             sentryDSN: '${{ secrets.SENTRY_DSN }}',
-            mapillary: '${{ secrets.MAPILLARY_KEY}}',
+            mapillary4: '${{ secrets.MAPILLARY_KEY}}',
             flickr: '${{ secrets.FLICKER_KEY}}',
-            google: '${{ secrets.GOOGLE_KEY}}'
+            google: '${{ secrets.GOOGLE_KEY}}',
+            mapyCz: '${{ secrets.MAPYCZ_KEY}}'
           };
 
           export default secrets;
