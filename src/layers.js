@@ -60,12 +60,12 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',
                         {
-                            code: 'OH',
+                            code: 'OK',
                             isOverlay: false,
                             scaleDependent: true,
                             print: true,
                             jnx: true,
-                            shortName: 'osmh',
+                            shortName: 'osmk',
                             attribution: '<a href="https://www.openstreetmap.org/copyright">' +
                                 '&copy; OpenStreetMap contributors</a>',
                         }
@@ -1692,6 +1692,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'OpenStreetMap',
         'CyclOSM',
         'OpenTopoMap',
+	'OpenStreetMap Humanitarian',
         'OpenCycleMap',
         'OSM Outdoors',
 	'OpenStreetMap OPNVKarte',
