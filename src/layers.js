@@ -994,6 +994,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.thunderforest.com/maps/outdoors/">Thunderforest Outdoors</a>',
                         }
                     )
+                },
                 {
                     title: 'OSM Atlas',
                     description: ' (OSM/Thunderforest Atlas style)',
@@ -1013,7 +1014,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             jnx: true,
                             shortName: 'osm_atlas',
                             attribution:
-                                '<a href="https://www.thunderforest.com/maps/outdoors/">Thunderforest Outdoors</a>',
+                                '<a href="https://www.thunderforest.com/maps/atlas/">Thunderforest Atlas</a>',
                         }
                     )
                 },
