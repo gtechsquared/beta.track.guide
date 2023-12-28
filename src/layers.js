@@ -113,7 +113,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/QLD Imagery Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Imagery/QldBase_AllUsers/ImageServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Imagery/'+
+                        'QldBase_AllUsers/ImageServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'qldi',
                             isOverlay: false,
@@ -132,7 +133,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/QLD QTOPO Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Basemaps/QldMap_Topo/MapServer/Tile/{z}/{y}/{x}',
+                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Basemaps/'+
+                        'QldMap_Topo/MapServer/Tile/{z}/{y}/{x}',
                         {
                             code: 'qldq',
                             isOverlay: true,
@@ -152,7 +154,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/QLD Road Names',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://spatial-gis.information.qld.gov.au/arcgis/rest/services/Basemaps/QldImageryLabel/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://spatial-gis.information.qld.gov.au/arcgis/rest/services/Basemaps/QldImageryLabel/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'qldn',
                             isOverlay: true,
@@ -172,7 +175,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/QLD Road Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/StreetMapCased_wmas/MapServer/tile/{z}/{y}/{x}',
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/'+
+                        'StreetMapCased_wmas/MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'qldrbm',
                             isOverlay: true,
@@ -212,7 +216,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/NSW Imagery',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}',
+                        'https://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'NSWi',
                             isOverlay: false,
@@ -231,7 +236,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/NSW LPI Topographic',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'http://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPIMap/MapServer/tile/{z}/{y}/{x}',
+                        'http://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPIMap/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'NSWt',
                             isOverlay: true,
@@ -251,7 +257,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/NSW LPI Map Sheets',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+                        'https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Topo_Map/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'NSWms',
                             isOverlay: true,
@@ -271,7 +278,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/TAS Imagery Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Orthophoto/MapServer/tile/{z}/{y}/{x}',
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Orthophoto/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'TASi',
                             isOverlay: false,
@@ -290,7 +298,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/TAS Topographic Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Topographic/MapServer/tile/{z}/{y}/{x}',
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Topographic/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'TASt',
                             isOverlay: true,
@@ -310,7 +319,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/TAS Emergency Services Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/ESgisMapBookPUBLIC/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/ESgisMapBookPUBLIC/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'TASes',
                             isOverlay: true,
@@ -330,7 +340,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/TAS Tasmap Raster',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/TasmapRaster/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/TasmapRaster/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'TASr',
                             isOverlay: true,
@@ -369,7 +380,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/SA Topographic Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/Topographic_wmas/MapServer/tile/{z}/{y}/{x}',
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/Topographic_wmas/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'SAt',
                             isOverlay: true,
@@ -389,7 +401,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/SA Road Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/StreetMapCased_wmas/MapServer/tile/{z}/{y}/{x}',
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/StreetMapCased_wmas/'+
+                        'MapServer/tile/{z}/{y}/{x}',
                         {
                             code: 'SAr',
                             isOverlay: true,
@@ -429,7 +442,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU Geoscience National Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.ga.gov.au/gis/rest/services/NationalBaseMap/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'GA1',
                             isOverlay: true,
@@ -449,7 +463,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU Geoscience Topographic',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'GA2',
                             isOverlay: true,
@@ -469,7 +484,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU NATMAP 1:250,000',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'GS3',
                             isOverlay: true,
@@ -489,7 +505,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU NATMAP 1:100,000',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/'+
+                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'GS4',
                             isOverlay: true,
