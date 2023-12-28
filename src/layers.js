@@ -88,7 +88,114 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '&copy; OpenStreetMap contributors</a>. ' +
                                 'Tiles style by <a href="https://www.cyclosm.org/">CyclOSM</a>',
                         }
-                        )
+                    )
+                },
+                {
+                    title: 'NZ NZTOPO50',
+                    description: ' (current series)',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://tiles-cdn.koordinates.com/services;key=08ed433a5d3d4f77a35e04c1ae3c8756/' +
+                        'tiles/v4/layer=50767/EPSG:3857/{z}/{x}/{y}.png',
+                        {
+                            code: 'NZ5',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZTOPO50',
+                            attribution:
+                                '<a href="https://www.linz.govt.nz/copyright">' +
+                                'Toitū Te Whenua Land Information New Zealand</a>',
+                        }
+                    )
+                },
+                {
+                    title: 'NZ NZTOPO250',
+                    description: ' (current series)',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://tiles-cdn.koordinates.com/services;key=08ed433a5d3d4f77a35e04c1ae3c8756/' +
+                        'tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png'
+                        {
+                            code: 'NZ260',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZMS260',
+                            attribution:
+                                '<a href="https://www.linz.govt.nz/copyright">' +
+                                'Toitū Te Whenua Land Information New Zealand</a>',
+                        }
+                    )
+                },
+                {
+                    title: 'NZ NZMS260 1:50,000',
+                    description: ' (1979-1997)',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'http://au.mapspast.org.nz/3857/nzms260-1999/{z}/{x}/{y}.png',
+                        {
+                            code: 'NZ260',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZMS260',
+                            attribution:
+                                '<a href="https://www.linz.govt.nz/copyright">' +
+                                'Toitū Te Whenua Land Information New Zealand and MapPast</a>',
+                        }
+                    )
+                },
+                 {
+                    title: 'NZ NZMS1 1:63,360',
+                    description: ' (1939-1979)',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'http://au.mapspast.org.nz/3857/nzms1-1979/{z}/{x}/{y}.png/',
+                        {
+                            code: 'NZ1',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZMS1',
+                            attribution:
+                                '<a href="https://www.linz.govt.nz/copyright">' +
+                                'Toitū Te Whenua Land Information New Zealand and MapPast</a>',
+                        }
+                    )
+                },   
+                {
+                    title: 'NZ Imagery Base Map',
+                    description: ' (current imagery)',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://basemaps.linz.govt.nz/v1/tiles/aerial/WebMercatorQuad/' +
+                        '{z}/{x}/{y}.webp?api=c01hdfhb6kd146t51zfc2p4sckt',
+                        {
+                            code: 'NZi',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZimagery',
+                            attribution:
+                                '<a href="https://www.linz.govt.nz/copyright">' +
+                                'Toitū Te Whenua Land Information New Zealand</a>',
+                        }
+                    )
                 },
                 {
                     title: 'ESRI Satellite',
@@ -1641,6 +1748,16 @@ class LayerGroupWithOptions extends L.LayerGroup {
             ],
         },
         {
+            title: 'New Zealand',
+            layers: [
+                'NZ NZTOPO50',
+                'NZ NZTOPO250',
+                'NZ NZMS260 1:50,000',
+                'NZ NZMS1 1:63,360',
+                'NZ Imagery Base Map',
+            ],
+        },
+        {
             title: 'Australia',
             layers: [
                 'AU/QLD Imagery Base Map',
@@ -1746,6 +1863,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'Google Satellite',
         'Bing Satellite',
         'Yandex Satellite',
+        'NZ Imagery Base Map',
         'AU/QLD Imagery Base Map',
         'AU/NSW Imagery',
         'AU/SA Imagery Base Map',
@@ -1755,6 +1873,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'Google Terrain',
         'Yandex Map',
         // Topo maps
+        'NZ NZTOPO50',
+        'NZ NZTOPO250',
+        'NZ NZMS260 1:50,000',
+        'NZ NZMS1 1:63,360',
         'AU/QLD QTOPO Base Map',
         'AU/QLD Road Names',
         'AU/QLD Road Base Map',
