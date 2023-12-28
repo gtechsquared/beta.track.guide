@@ -136,6 +136,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldq',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -155,6 +156,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldn',
                             isOverlay: true,
+			    isOverlayTransparent: true,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -174,6 +176,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldrbm',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -193,6 +196,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'VICe',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -231,6 +235,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'NSWt',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -250,6 +255,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'NSWms',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -288,6 +294,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'TASt',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -306,7 +313,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/ESgisMapBookPUBLIC/MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'TASes',
-                            isOverlay: false,
+                            isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 15,
                             print: true,
@@ -325,7 +333,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/TasmapRaster/MapServer/tile/{z}/{y}/{x}?blankTile=false',
                         {
                             code: 'TASr',
-                            isOverlay: false,
+                            isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -365,6 +374,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'SAt',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -384,6 +394,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'SAr',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -403,6 +414,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'getlost',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -422,6 +434,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GA1',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -441,6 +454,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GA2',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -460,6 +474,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS3',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -479,6 +494,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS4',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -498,6 +514,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS5',
                             isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -1723,10 +1740,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'GGC Topographic 1:100,000',
 	'GGC Topographic 1:200,000',
         'Great Britain Topographic',
-	'Montenegro topo 250m',
+	'Montenegro 1:25,000',
 	'Norway Topographic Sheets',
         'Norway Topographic',
-        'Norway roads',
+        'Norway Roads',
         'Slovakia Topographic',
         'Spain Topographic',
         'Switzerland Topographic',
