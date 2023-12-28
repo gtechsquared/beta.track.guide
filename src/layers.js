@@ -38,7 +38,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                     )
                 },
-				{
+                {
                     title: 'OpenStreetMap Humanitarian',
                     isDefault: true,
                     layer: L.tileLayer('https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
@@ -53,8 +53,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '&copy; OpenStreetMap contributors</a>',
                         }
                     )
-                },				
-				{
+                },
+                {
                     title: 'OpenStreetMap OPNVKarte',
                     description: 'OpenStreetMap Transport',
                     isDefault: false,
@@ -70,10 +70,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '&copy; OpenStreetMap contributors</a>',
                         }
                     )
-                },					
+                },
                 {
                     title: 'CyclOSM',
-					description: '(OSM cycling/outdoors style)',
+                    description: '(OSM cycling/outdoors style)',
                     isDefault: true,
                     layer: L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
                         {
@@ -109,7 +109,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                         )
                 },
-				{
+                {
                     title: 'AU/QLD Imagery Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -126,9 +126,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-		        )  
-		},
-				{
+                    )  
+                },
+                {
                     title: 'AU/QLD QTOPO Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -136,7 +136,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldq',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -146,9 +146,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/QLD Road Names',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -156,7 +156,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldn',
                             isOverlay: true,
-			    isOverlayTransparent: true,
+                            isOverlayTransparent: true,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -166,9 +166,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-		        )
-               },
-				{
+                   )
+                },
+                {
                     title: 'AU/QLD Road Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -176,7 +176,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'qldrbm',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -186,9 +186,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-		        )
-               },				
-				{
+                    )
+                },                                
+                {
                     title: 'AU/VIC Emergency Services Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -196,7 +196,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'VICe',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -206,9 +206,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://emergency.vic.gov.au/about-this-site/terms-of-use">' +
                                 '© Emergency Management Victoria</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/NSW Imagery',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -225,9 +225,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/NSW LPI Topographic',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -235,7 +235,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'NSWt',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -245,9 +245,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/NSW LPI Map Sheets',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -255,7 +255,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'NSWms',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -265,9 +265,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
                        }
-		       )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/TAS Imagery Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -284,9 +284,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
                        }
-		       )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/TAS Topographic Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -294,7 +294,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'TASt',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -304,9 +304,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY 3.0 AU)</a>',
                          }
-		         )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/TAS Emergency Services Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -314,7 +314,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'TASes',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 15,
                             print: true,
@@ -324,9 +324,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/TAS Tasmap Raster',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -334,7 +334,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'TASr',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -343,11 +343,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
-                         }
-		         )
-               },
-					
-				{
+                        }
+                    )
+                },
+                {
                     title: 'AU/SA Imagery Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -364,9 +363,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU/SA Topographic Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -374,7 +373,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'SAt',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -384,9 +383,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
                          }
-		         )
-               },				
-				{
+                    )
+               },
+                {
                     title: 'AU/SA Road Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -394,7 +393,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'SAr',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -404,9 +403,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
                          }
-		         )
-               },						
-				{
+                    )
+               },                                                
+                {
                     title: 'AU Get Lost Maps',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -414,7 +413,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'getlost',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 18,
                             print: true,
@@ -424,9 +423,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.getlost.com.au/">' +
                                 'GetLost Maps</a>',
                          }
-		         )
-               },
-		{
+                    )
+                },
+                {
                     title: 'AU Geoscience National Base Map',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -434,7 +433,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GA1',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 16,
                             print: true,
@@ -444,9 +443,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                          }
-		         )
+                    )
                },
-				{
+                {
                     title: 'AU Geoscience Topographic',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -454,7 +453,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GA2',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -464,9 +463,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                          }
-		         )
+                    )
                },
-				{
+                {
                     title: 'AU NATMAP 1:250,000',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -474,7 +473,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS3',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -484,9 +483,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                         }
-		        )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU NATMAP 1:100,000',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -494,7 +493,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS4',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -504,9 +503,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                          }
-		         )
-               },
-				{
+                    )
+                },
+                {
                     title: 'AU NATMAP 1:50,000 QLD',
                     isDefault: true,
                     layer: L.tileLayer(
@@ -514,7 +513,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'GS5',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
@@ -524,8 +523,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                          }
-		         )
-               },
+                    )
+                },
                 {
                     title: 'Yandex Map',
                     description: '(English and Cyrillic)',
@@ -645,7 +644,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         {
                             code: 'T',
                             isOverlay: true,
-			    isOverlayTransparent: false,
+                            isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 13,
                             noCors: false,
@@ -657,7 +656,6 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                     )
                 },
-
                 {
                     title: 'Topo 1:1,000,000',
                     description: ' (Soviet sheets in Cyrillic 1970-90)',
@@ -918,7 +916,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OpenTopoMap',
-					description: ' (OSM Topographic style)',
+                    description: ' (OSM Topographic style)',
                     isDefault: true,
                     layer: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                         {
@@ -937,7 +935,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OpenCycleMap',
-					description: ' (OSM/Thunderforest Cycling style)',
+                    description: ' (OSM/Thunderforest Cycling style)',
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
@@ -957,7 +955,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OSM Outdoors',
-					description: ' (OSM/Thunderforest Outdoors style)',
+                    description: ' (OSM/Thunderforest Outdoors style)',
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
@@ -1424,7 +1422,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             isOverlayTransparent: true,
                             attribution: '<a href="https://cycling.waymarkedtrails.org/">Waymarked Cycling Trails</a>',
                         }
-		        )
+                    )
                 },
                 {
                     title: 'Waymarked Hiking Trails',
@@ -1442,7 +1440,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             isOverlayTransparent: true,
                             attribution: '<a href="https://hiking.waymarkedtrails.org/">Waymarked Hiking Trails</a>',
                         }
-		      )
+                    )
                 },
                 {
                     title: 'Slovakia Topographic',
@@ -1576,12 +1574,12 @@ class LayerGroupWithOptions extends L.LayerGroup {
             title: 'OpenStreetMap',
             layers: [
                 'OpenStreetMap',
-		'OpenStreetMap Humanitarian',
+                'OpenStreetMap Humanitarian',
                 'OpenTopoMap',
                 'CyclOSM',
-		'OpenCycleMap',
+                'OpenCycleMap',
                 'OSM Outdoors',
-		'OpenStreetMap OPNVKarte',
+                'OpenStreetMap OPNVKarte',
             ],
         },
         {
@@ -1592,7 +1590,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'Google Terrain',
                 'Google Hybrid',
                 'Bing Satellite',
-		'ESRI Satellite',
+                'ESRI Satellite',
                 'Yandex Map',
                 'Yandex Satellite', 
             ],
@@ -1600,37 +1598,37 @@ class LayerGroupWithOptions extends L.LayerGroup {
         {
             title: 'Australia',
             layers: [
-		'AU/QLD Imagery Base Map',
-		'AU/QLD QTOPO Base Map',
-		'AU/QLD Road Names',
-		'AU/QLD Road Base Map',
-		'AU/VIC Emergency Services Base Map',
-		'AU/NSW Imagery',
-		'AU/NSW LPI Topographic',
-		'AU/NSW LPI Map Sheets',
-		'AU/TAS Imagery Base Map',
-		'AU/TAS Topographic Base Map',
-		'AU/TAS Emergency Services Map',
-		'AU/TAS Tasmap Raster',
-		'AU/SA Imagery Base Map',
-		'AU/SA Topographic Base Map',
-		'AU/SA Road Base Map',
-		'AU Get Lost Maps',
-		'AU Geoscience National Base Map',
-		'AU Geoscience Topographic',
-		'AU NATMAP 1:250,000',
-		'AU NATMAP 1:100,000',
-		'AU NATMAP 1:50,000 QLD',
-			],
-        },						
+                'AU/QLD Imagery Base Map',
+                'AU/QLD QTOPO Base Map',
+                'AU/QLD Road Names',
+                'AU/QLD Road Base Map',
+                'AU/VIC Emergency Services Base Map',
+                'AU/NSW Imagery',
+                'AU/NSW LPI Topographic',
+                'AU/NSW LPI Map Sheets',
+                'AU/TAS Imagery Base Map',
+                'AU/TAS Topographic Base Map',
+                'AU/TAS Emergency Services Map',
+                'AU/TAS Tasmap Raster',
+                'AU/SA Imagery Base Map',
+                'AU/SA Topographic Base Map',
+                'AU/SA Road Base Map',
+                'AU Get Lost Maps',
+                'AU Geoscience National Base Map',
+                'AU Geoscience Topographic',
+                'AU NATMAP 1:250,000',
+                'AU NATMAP 1:100,000',
+                'AU NATMAP 1:50,000 QLD',
+                        ],
+        },                                                
        {
             title: 'Europe',
-            layers: [				
+            layers: [                                
                 'Finland Topographic',
                 'France Topographic',
                 'Great Britain Topographic',
- 		'Montenegro 1:25,000',
-		'Norway Topographic Sheets',
+                 'Montenegro 1:25,000',
+                'Norway Topographic Sheets',
                 'Norway Topographic',
                 'Norway Roads',
                 'Slovakia Topographic',
@@ -1640,7 +1638,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         },
        {
             title: 'Russia',
-            layers: [				
+            layers: [                                
                 'Caucasus 1:100,000',
                 'Caucasus 1:50,000',
                 'GGC Topographic 1:25,000',
@@ -1655,13 +1653,13 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'O-sport',
                 'Wikimapia',
                 'Mountain passes (Westra)',
-		'Mountains by Alexander Purikov',
+                'Mountains by Alexander Purikov',
                 'geocaching.su',
             ],
         },
        {
             title: 'Soviet Mapping',
-            layers: [				
+            layers: [                                
                 'Eurasia 1:2,500,000',
                 'Topo 1:25,000',
                 'Topo 1:50,000',
@@ -1693,57 +1691,57 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'OpenStreetMap',
         'CyclOSM',
         'OpenTopoMap',
-	'OpenStreetMap Humanitarian',
+        'OpenStreetMap Humanitarian',
         'OpenCycleMap',
         'OSM Outdoors',
-	'OpenStreetMap OPNVKarte',
+        'OpenStreetMap OPNVKarte',
         // Satellite
         'ESRI Satellite',
         'Google Satellite',
         'Bing Satellite',
-	'Yandex Satellite',
-	'AU/QLD Imagery Base Map',
-	'AU/NSW Imagery',
-	'AU/SA Imagery Base Map',
-	'AU/TAS Imagery Base Map',
+        'Yandex Satellite',
+        'AU/QLD Imagery Base Map',
+        'AU/NSW Imagery',
+        'AU/SA Imagery Base Map',
+        'AU/TAS Imagery Base Map',
         // Commercial maps
         'Google Map',
         'Google Terrain',
-        'Yandex Map',		
+        'Yandex Map',                
         // Topo maps
-	'AU/QLD QTOPO Base Map',
-	'AU/QLD Road Names',
-	'AU/QLD Road Base Map',
-	'AU/VIC Emergency Services Base Map',
-	'AU/NSW LPI Topographic',
-	'AU/NSW LPI Map Sheets',
-	'AU/TAS Topographic Base Map',
-	'AU/TAS Emergency Services Map',
-	'AU/TAS Tasmap Raster',
-	'AU/SA Topographic Base Map',
-	'AU/SA Road Base Map',
-	'AU Get Lost Maps',
-	'AU Geoscience National Base Map',
-	'AU Geoscience Topographic',
-	'AU NATMAP 1:250,000',
-	'AU NATMAP 1:100,000',
-	'AU NATMAP 1:50,000 QLD',
+        'AU/QLD QTOPO Base Map',
+        'AU/QLD Road Names',
+        'AU/QLD Road Base Map',
+        'AU/VIC Emergency Services Base Map',
+        'AU/NSW LPI Topographic',
+        'AU/NSW LPI Map Sheets',
+        'AU/TAS Topographic Base Map',
+        'AU/TAS Emergency Services Map',
+        'AU/TAS Tasmap Raster',
+        'AU/SA Topographic Base Map',
+        'AU/SA Road Base Map',
+        'AU Get Lost Maps',
+        'AU Geoscience National Base Map',
+        'AU Geoscience Topographic',
+        'AU NATMAP 1:250,000',
+        'AU NATMAP 1:100,000',
+        'AU NATMAP 1:50,000 QLD',
 
         // local base layers
 
         // map overlays
         '#custom-bottom',
-	'Eurasia 1:2,500,000',
-	'Finland Topographic',
+        'Eurasia 1:2,500,000',
+        'Finland Topographic',
         'France Topographic',
 
-	'GGC Topographic 1:25,000',
-	'GGC Topographic 1:50,000',
+        'GGC Topographic 1:25,000',
+        'GGC Topographic 1:50,000',
         'GGC Topographic 1:100,000',
-	'GGC Topographic 1:200,000',
+        'GGC Topographic 1:200,000',
         'Great Britain Topographic',
-	'Montenegro 1:25,000',
-	'Norway Topographic Sheets',
+        'Montenegro 1:25,000',
+        'Norway Topographic Sheets',
         'Norway Topographic',
         'Norway Roads',
         'Slovakia Topographic',
@@ -1752,14 +1750,14 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'Mountains by Alexander Purikov',
         'Mountains by Aleksey Tsvetkov',
         'Slazav mountains',
-	'Topo 1:25,000',
-	'Topo 1:50,000',
+        'Topo 1:25,000',
+        'Topo 1:50,000',
         'Topo 1:100,000',
-	'Topo 1:1,000,000',
+        'Topo 1:1,000,000',
         'Topomapper 1:100,000',
-	'Caucasus 1:50,000',
+        'Caucasus 1:50,000',
         'Caucasus 1:100,000',
-	'ArbaletMO',
+        'ArbaletMO',
         'Slazav Moscow region map',
         'Races',
         'O-sport',
@@ -1767,7 +1765,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
 
         // line overlays
         'Google Hybrid',
-	'Waymarked Hiking Trails',
+        'Waymarked Hiking Trails',
         'Waymarked Cycling Trails',
         'OpenStreetMap GPS traces',
         'Strava heatmap (all)',
