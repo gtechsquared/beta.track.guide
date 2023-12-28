@@ -23,7 +23,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
     const layersDefs = [
                 {
                     title: 'OpenStreetMap',
-                    description: 'OSM default style',
+                    description: '(OSM default style)',
                     isDefault: true,
                     layer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                         {
@@ -38,8 +38,42 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                     )
                 },
+				{
+                    title: 'OpenStreetMap Humanitarian',
+                    isDefault: true,
+                    layer: L.tileLayer('https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                        {
+                            code: 'OH',
+                            isOverlay: false,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'osmh',
+                            attribution: '<a href="https://www.openstreetmap.org/copyright">' +
+                                '&copy; OpenStreetMap contributors</a>',
+                        }
+                    )
+                },				
+				{
+                    title: 'OpenStreetMap OPNVKarte',
+                    description: 'OpenStreetMap Transport',
+                    isDefault: false,
+                    layer: L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',
+                        {
+                            code: 'OH',
+                            isOverlay: false,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'osmh',
+                            attribution: '<a href="https://www.openstreetmap.org/copyright">' +
+                                '&copy; OpenStreetMap contributors</a>',
+                        }
+                    )
+                },					
                 {
                     title: 'CyclOSM',
+					description: '(OSM cycling/outdoors style)',
                     isDefault: true,
                     layer: L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
                         {
@@ -75,8 +109,389 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                     )
                 },
+				{
+                    title: 'AU/QLD Imagery Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Imagery/QldBase_AllUsers/ImageServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'qldi',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'qldimg',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                        }
+                ),
+				{
+                    title: 'AU/QLD QTOPO Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://gisservices.information.qld.gov.au/arcgis/rest/services/Basemaps/QldMap_Topo/MapServer/Tile/{z}/{y}/{x}',
+                        {
+                            code: 'qldq',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 16,
+                            print: true,
+                            jnx: true,
+                            shortName: 'qldqtopo',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                        }
+                ),
+				{
+                    title: 'AU/QLD Road Names',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://spatial-gis.information.qld.gov.au/arcgis/rest/services/Basemaps/QldImageryLabel/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'qldn',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'qldnames',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                        }
+                ),
+				{
+                    title: 'AU/QLD Road Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/StreetMapCased_wmas/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'qldrbm',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'qldroadname',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                        }
+                ),					
+				{
+                    title: 'AU/VIC Emergency Services Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://maps.em.vic.gov.au/tms_cache/mapscape_vic_merc_color_ed8/{z}/{x}/{y}.png',
+                        {
+                            code: 'VICe',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'VICemergency',
+                            attribution:
+                                '<a href="https://emergency.vic.gov.au/about-this-site/terms-of-use">' +
+                                '© Emergency Management Victoria</a>',
+                        }
+                ),	
+				{
+                    title: 'AU/NSW Imagery',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'NSWi',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NSWimagery',
+                            attribution:
+                                '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
+                                '© Department of Customer Service 2020</a>',
+                        }
+                ),
+				{
+                    title: 'AU/NSW LPI Topographic',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'http://maps.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPIMap/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'NSWt',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NSWtopo',
+                            attribution:
+                                '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
+                                '© Department of Customer Service 2020</a>',
+                        }
+                ),
+				{
+                    title: 'AU/NSW LPI Map Sheets',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'NSWms',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 16,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NSWmapsheets',
+                            attribution:
+                                '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
+                                '© Department of Customer Service 2020</a>',
+                        }
+                ),
+				{
+                    title: 'AU/TAS Imagery Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Orthophoto/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'TASi',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'TASimagery',
+                            attribution:
+                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
+                                '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
+                        }
+                ),
+				{
+                    title: 'AU/TAS Topographic Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Topographic/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'TASt',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'TAStopo',
+                            attribution:
+                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
+                                '© State of Tasmania (Creative Commons BY 3.0 AU)</a>',
+                        }
+                ),
+				{
+                    title: 'AU/TAS Emergency Services Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/ESgisMapBookPUBLIC/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'TASes',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'TASemergency',
+                            attribution:
+                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
+                                '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
+                        }
+                ),
+				{
+                    title: 'AU/TAS Tasmap Raster',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/TasmapRaster/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'TASr',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 16,
+                            print: true,
+                            jnx: true,
+                            shortName: 'TASraster',
+                            attribution:
+                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
+                                '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
+                        }
+                ),
+					
+				{
+                    title: 'AU/SA Imagery Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://imagemap.geohub.sa.gov.au/mapproxy/wmts/PublicMosaic/webmercator_22/{z}/{x}/{y}.png',
+                        {
+                            code: 'SAi',
+                            isOverlay: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'SAimagery',
+                            attribution:
+                                '<a href="https://creativecommons.org/licenses/by/4.0/">' +
+                                '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
+                        }
+                ),
+				{
+                    title: 'AU/SA Topographic Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/Topographic_wmas/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'SAt',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'SAtopo',
+                            attribution:
+                                '<a href="https://creativecommons.org/licenses/by/4.0/">' +
+                                '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
+                        }
+                ),					
+				{
+                    title: 'AU/SA Road Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://basemap.geohub.sa.gov.au/server/rest/services/BaseMaps/StreetMapCased_wmas/MapServer/tile/{z}/{y}/{x}',
+                        {
+                            code: 'SAr',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'SAroad',
+                            attribution:
+                                '<a href="https://creativecommons.org/licenses/by/4.0/">' +
+                                '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
+                        }
+                ),							
+				{
+                    title: 'AU Get Lost Maps',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://live.getlost.com.au/{z}/{x}/{y}.jpg',
+                        {
+                            code: 'getlost',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'getlostmaps',
+                            attribution:
+                                '<a href="https://www.getlost.com.au/">' +
+                                'GetLost Maps</a>',
+                        }
+                ),
+
+				{
+                    title: 'AU Geoscience National Base Map',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'GA1',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 16,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAnbm',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                        }
+                ),
+				{
+                    title: 'AU Geoscience Topographic',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'GA2',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAtopo',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                        }
+                ),
+				{
+                    title: 'AU NATMAP 1:250,000',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'GS3',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'ga250',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                        }
+                ),
+				{
+                    title: 'AU NATMAP 1:100,000',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        {
+                            code: 'GS4',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GA100',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                        }
+                ),
+				{
+                    title: 'AU NATMAP 1:50,000 QLD',
+                    isDefault: true,
+                    layer: L.tileLayer(
+                        'https://s3.eu-central-1.wasabisys.com/au-maps.track.guide/GA50k_QLD/{z}/{x}/{y}.png',
+                        {
+                            code: 'GS5',
+                            isOverlay: true,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GA50',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                        }
+                ),
                 {
-                    title: 'Yandex map',
+                    title: 'Yandex Map',
+                    description: '(English and Cyrillic)',
                     isDefault: false,
                     layer: new L.Layer.Yandex.Map(
                         {
@@ -122,7 +537,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'Google Hybrid',
-                    isDefault: true,
+                    isDefault: false,
                     layer: new L.Layer.GoogleHybrid(
                         {
                             code: 'Gh',
@@ -183,7 +598,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Topomapper 1km',
+                    title: 'Topomapper 1:100,000',
+                    description: ' (Soviet sheets with English POIs)',
                     isDefault: false,
                     layer: L.tileLayer(
                         urlViaCorsProxy(
@@ -205,7 +621,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
 
                 {
-                    title: 'Topo 10km',
+                    title: 'Topo 1:1,000,000',
+                    description: ' (Soviet sheets in Cyrillic 1970-90)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/topo001m/{z}/{x}/{y}",
                         {
@@ -222,7 +639,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'GGC 2 km',
+                    title: 'GGC Topographic 1:200,000',
+                    description: ' (Russia in Cyrillic 2002-2007)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/ggc2000/{z}/{x}/{y}",
                         {
@@ -277,7 +695,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'GGC 1km',
+                    title: 'GGC Topographic 1:100,000',
+                    description: ' (Russia in Cyrillic 2002-2007)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/ggc1000/{z}/{x}/{y}",
                         {
@@ -294,7 +713,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Topo 1km',
+                    title: 'Topo 1:100,000',
+                    description: ' (Soviet sheets in Cyrillic 1970-90)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/topo1000/{z}/{x}/{y}",
                         {
@@ -311,7 +731,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'GGC 500m',
+                    title: 'GGC Topographic 1:50,000',
+                    description: ' (Russia in Cyrillic 2002-2007)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/ggc500/{z}/{x}/{y}",
                         {
@@ -328,7 +749,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Topo 500m',
+                    title: 'Topo 1:50,000',
+                    description: ' (Soviet sheets in Cyrillic 1970-90)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/topo500/{z}/{x}/{y}",
                         {
@@ -345,7 +767,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'GGC 250m',
+                    title: 'GGC Topographic 1:25,000',
+                    description: ' (Russia in Cyrillic 2002-2007)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/ggc250/{z}/{x}/{y}",
                         {
@@ -457,6 +880,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OpenTopoMap',
+					description: ' (OSM Topographic style)',
                     isDefault: true,
                     layer: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                         {
@@ -475,8 +899,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OpenCycleMap',
-                    description: '<a href="https://www.opencyclemap.org/docs/">(Info and key)</a>',
-                    isDefault: true,
+					description: ' (OSM/Thunderforest Cycling style)',
+                    isDefault: false,
                     layer: new RetinaTileLayer(
                         [
                             'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png',
@@ -495,7 +919,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'OSM Outdoors',
-                    isDefault: true,
+					description: ' (OSM/Thunderforest Outdoors style)',
+                    isDefault: false,
                     layer: new RetinaTileLayer(
                         [
                             'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png',
@@ -514,8 +939,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Eurasia 25km',
-                    description: '1975-80',
+                    title: 'Eurasia 1:2,500,000',
+                    description: ' (Soviet sheets in Cyrillic 1975-80)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/eurasia25km/{z}/{x}/{y}",
                         {
@@ -532,7 +957,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Caucasus 1km',
+                    title: 'Caucasus 1:100,000',
+                    description: ' (Russia sheets in Cyrillic)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/new_gsh_100k/{z}/{x}/{y}",
                         {
@@ -550,7 +976,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Caucasus 500m',
+                    title: 'Caucasus 1:50,000',
+                    description: ' (Russia sheets in Cyrillic)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/new_gsh_050k/{z}/{x}/{y}",
                         {
@@ -568,7 +995,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Topo 250m',
+                    title: 'Topo 1:25,000',
+                    description: ' (Soviet sheets in Cyrillic)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/topo250/{z}/{x}/{y}",
                         {
@@ -585,8 +1013,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Montenegro topo 250m',
-                    description: '1970-72',
+                    title: 'Montenegro 1:25,000',
+                    description: ' (Cyrillic 1970-72)',
                     isDefault: false,
                     layer: L.tileLayer("https://{s}.tiles.nakarte.me/montenegro250m/{z}/{x}/{y}",
                         {
@@ -606,7 +1034,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'Mountains by Aleksey Tsvetkov',
                     description:
                         'Tian Shan, Dzungaria, <a href="http://pereval.g-utka.ru/">http://pereval.g-utka.ru/</a>',
-                    isDefault: true,
+                    isDefault: false,
                     layer: new LayerGroupWithOptions(
                         [
                             L.tileLayer(
@@ -785,7 +1213,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Norway paper map',
+                    title: 'Norway Topographic Sheets',
                     isDefault: false,
                     layer: new L.TileLayer(
                         'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=toporaster4&zoom={z}&x={x}&y={y}', // eslint-disable-line max-len
@@ -807,7 +1235,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Norway topo',
+                    title: 'Norway Topographic',
                     isDefault: false,
                     layer: new L.TileLayer(
                         'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
@@ -829,7 +1257,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     // Вместо 404 отдают 500 для отсутствующих тайлов
-                    title: 'Norway roads',
+                    title: 'Norway Roads',
                     description: '<a href="https://kart.finn.no/">https://kart.finn.no/</a>',
                     isDefault: false,
                     layer: L.tileLayer("https://maptiles1.finncdn.no/tileService/1.0.3/normap/{z}/{x}/{y}.png",
@@ -850,8 +1278,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Finland Topo',
-                    description: '<a href="https://laji.fi/en/map/">LAJI.FI</a>',
+                    title: 'Finland Topographic',
                     isDefault: false,
                     layer: L.tileLayer(
                         "https://proxy.laji.fi/mml_wmts/maasto/wmts/1.0.0/maastokartta/default/WGS84_Pseudo-Mercator/" +
@@ -873,7 +1300,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'France Topo 250m',
+                    title: 'France Topographic',
                     isDefault: false,
                     layer: new LayerGroupWithOptions(
                         [
@@ -911,7 +1338,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     ),
                 },
                 {
-                    title: 'Great Britain Topo',
+                    title: 'Great Britain Topographic',
                     isDefault: false,
                     layer: new LayerGroupWithOptions(
                         [
@@ -978,7 +1405,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         })
                 },
                 {
-                    title: 'Slovakia topo',
+                    title: 'Slovakia Topographic',
                     description: '<a href="https://mapy.hiking.sk">https://mapy.hiking.sk/</a>',
                     isDefault: false,
                     layer: new LayerGroupWithOptions(
@@ -1028,7 +1455,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Spain topo',
+                    title: 'Spain Topographic',
                     isDefault: false,
                     layer: L.tileLayer(
                             'https://www.ign.es/wmts/mapa-raster?layer=MTN&style=default&' +
@@ -1052,7 +1479,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'Switzerland topo',
+                    title: 'Switzerland Topographic',
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
@@ -1106,67 +1533,103 @@ class LayerGroupWithOptions extends L.LayerGroup {
 
     const groupsDefs = [
         {
-            title: 'Default layers',
+            title: 'OpenStreetMap',
             layers: [
                 'OpenStreetMap',
+				'OpenStreetMap Humanitarian',
+                'OpenTopoMap',
                 'CyclOSM',
-                'ESRI Satellite',
-                'Yandex map',
-                'Yandex Satellite',
+				'OpenCycleMap',
+                'OSM Outdoors',
+				'OpenStreetMap OPNVKarte',
+            ],
+        },
+        {
+            title: 'Global Maps',
+            layers: [
                 'Google Map',
                 'Google Satellite',
                 'Google Terrain',
+                'Google Hybrid',
                 'Bing Satellite',
-                'Topomapper 1km',
-                'Topo 10km',
-                'GGC 2 km',
+				'ESRI Satellite',
+                'Yandex Map',
+                'Yandex Satellite', 
+            ],
+        },
+        {
+            title: 'Australia',
+            layers: [
+				'AU/QLD Imagery Base Map',
+				'AU/QLD QTOPO Base Map',
+				'AU/QLD Road Names',
+				'AU/QLD Road Base Map',
+				'AU/VIC Emergency Services Base Map',
+				'AU/NSW Imagery',
+				'AU/NSW LPI Topographic',
+				'AU/NSW LPI Map Sheets',
+				'AU/TAS Imagery Base Map',
+				'AU/TAS Topographic Base Map',
+				'AU/TAS Emergency Services Map',
+				'AU/TAS Tasmap Raster',
+				'AU/SA Imagery Base Map',
+				'AU/SA Topographic Base Map',
+				'AU/SA Road Base Map',
+				'AU Get Lost Maps'
+				'AU Geoscience National Base Map',
+				'AU Geoscience Topographic',
+				'AU NATMAP 1:250,000',
+				'AU NATMAP 1:100,000',
+				'AU NATMAP 1:50,000 QLD',
+			],
+        },						
+       {
+            title: 'Europe',
+            layers: [				
+                'Finland Topographic',
+                'France Topographic',
+                'Great Britain Topographic',
+ 				'Montenegro 1:25,000',
+				'Norway Topographic Sheets',
+                'Norway Topographic',
+                'Norway Roads'
+                'Slovakia Topographic',
+                'Spain Topographic',
+                'Switzerland Topographic',
+            ],
+        },
+       {
+            title: 'Russia',
+            layers: [				
+                'Caucasus 1:100,000',
+                'Caucasus 1:50,000',
+                'GGC Topographic 1:25,000',
+                'GGC Topographic 1:50,000',
+                'GGC Topographic 1:100,000',
+                'GGC Topographic 1:200,000',
                 'ArbaletMO',
                 'Mountains by Aleksey Tsvetkov',
                 'Slazav mountains',
-                'GGC 1km',
-                'Topo 1km',
-                'GGC 500m',
-                'Topo 500m',
-                'GGC 250m',
                 'Slazav Moscow region map',
                 'Races',
                 'O-sport',
-                'Soviet topo maps grid',
                 'Wikimapia',
                 'Mountain passes (Westra)'
-            ],
-        },
-        {
-            title: 'OpenStreetMap alternatives',
-            layers: [
-                'OpenTopoMap',
-                'OpenCycleMap',
-                'OSM Outdoors',
-            ],
-        },
-        {
-            title: 'Topo maps',
-            layers: [
-                'Eurasia 25km',
-                'Caucasus 1km',
-                'Caucasus 500m',
-                'Topo 250m',
-                'Montenegro topo 250m',
-                'Finland Topo',
-                'France Topo 250m',
-                'Great Britain Topo',
-                'Slovakia topo',
-                'Spain topo',
-                'Switzerland topo',
-            ],
-        },
-        {
-            title: 'Miscellaneous',
-            layers: [
-                'Mountains by Alexander Purikov',
-                'Google Hybrid',
+				'Mountains by Alexander Purikov',
                 'geocaching.su'
-            ]
+            ],
+        },
+       {
+            title: 'Soviet Mapping',
+            layers: [				
+                'Eurasia 1:2,500,000',
+                'Topo 1:25,000',
+                'Topo 1:50,000',
+                'Topo 1:100,000',
+                'Topo 1:1,000,000',
+                'Topomapper 1:100,000',
+                'Soviet topo maps grid',
+            ],
         },
         {
             title: 'Routes and traces',
@@ -1182,15 +1645,6 @@ class LayerGroupWithOptions extends L.LayerGroup {
             ],
 
         },
-        {
-            title: 'Norway <a href="https://www.ut.no/kart/">https://www.ut.no/kart/</a>',
-            layers: [
-                'Norway paper map',
-                'Norway topo',
-                'Norway roads'
-            ],
-
-        },
     ];
 
     const titlesByOrder = [
@@ -1201,54 +1655,76 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'OpenTopoMap',
         'OpenCycleMap',
         'OSM Outdoors',
+		'OpenStreetMap OPNVKarte',
         // Satellite
         'ESRI Satellite',
-        'Yandex Satellite',
         'Google Satellite',
-        'Bing Satellite',
+        'Bing Satellite',		
+		'Yandex Satellite',
         // Commercial maps
-        'Yandex map',
         'Google Map',
         'Google Terrain',
+        'Google Hybrid',
+        'Yandex Map',		
         // Topo maps
-        'Topomapper 1km',
+		'AU/QLD Imagery Base Map',
+		'AU/QLD QTOPO Base Map',
+		'AU/QLD Road Names',
+		'AU/QLD Road Base Map',
+		'AU/VIC Emergency Services Base Map',
+		'AU/NSW Imagery',
+		'AU/NSW LPI Topographic',
+		'AU/NSW LPI Map Sheets',
+		'AU/TAS Imagery Base Map',
+		'AU/TAS Topographic Base Map',
+		'AU/TAS Emergency Services Map',
+		'AU/TAS Tasmap Raster',
+		'AU/SA Imagery Base Map',
+		'AU/SA Topographic Base Map',
+		'AU/SA Road Base Map',
+		'AU Get Lost Maps'
+		'AU Geoscience National Base Map',
+		'AU Geoscience Topographic',
+		'AU NATMAP 1:250,000',
+		'AU NATMAP 1:100,000',
+		'AU NATMAP 1:50,000 QLD',
 
         // local base layers
 
         // map overlays
         '#custom-bottom',
-        'Eurasia 25km',
-        'Topo 10km',
-        'GGC 2 km',
-        'ArbaletMO',
-        'Norway roads',
-        'Norway paper map',
-        'Norway topo',
-        'Finland Topo',
-        'Slovakia topo',
-        'Spain topo',
+		'Eurasia 1:2,500,000',
+		'Finland Topographic',
+        'France Topographic',
+		'GGC Topographic 1:25,000',
+		'GGC Topographic 1:50,000',
+        'GGC Topographic 1:100,000',
+		'GGC Topographic 1:200,000',
+        'Great Britain Topographic',
+		'Montenegro topo 250m',
+		'Norway Topographic Sheets',
+        'Norway Topographic',
+        'Norway roads'
+        'Slovakia Topographic',
+        'Spain Topographic',
+        'Switzerland Topographic',
         'Mountains by Alexander Purikov',
         'Mountains by Aleksey Tsvetkov',
         'Slazav mountains',
-        'GGC 1km',
-        'Topo 1km',
-        'Caucasus 1km',
-        'Great Britain Topo',
-        'GGC 500m',
-        'Topo 500m',
-        'Caucasus 500m',
-        'GGC 250m',
-        'Topo 250m',
-        'Montenegro topo 250m',
-        'France Topo 250m',
-        'Switzerland topo',
+		'Topo 1:25,000',
+		'Topo 1:50,000',
+        'Topo 1:100,000',
+		'Topo 1:1,000,000',
+        'Topomapper 1:100,000',
+		'Caucasus 1:50,000',
+        'Caucasus 1:100,000',
+		'ArbaletMO',
         'Slazav Moscow region map',
         'Races',
         'O-sport',
         '#custom-top',
 
         // line overlays
-        'Google Hybrid',
         'Waymarked Hiking Trails',
         'Waymarked Cycling Trails',
         'OpenStreetMap GPS traces',
