@@ -88,7 +88,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '&copy; OpenStreetMap contributors</a>. ' +
                                 'Tiles style by <a href="https://www.cyclosm.org/">CyclOSM</a>',
                         }
-                    )
+                        )
                 },
                 {
                     title: 'ESRI Satellite',
@@ -107,7 +107,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">' +
                                 'ESRI World Imagery for ArcGIS</a>',
                         }
-                    )
+                        )
                 },
 				{
                     title: 'AU/QLD Imagery Base Map',
@@ -126,7 +126,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-                ),
+		        )  
+		},
 				{
                     title: 'AU/QLD QTOPO Base Map',
                     isDefault: true,
@@ -144,7 +145,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/QLD Road Names',
                     isDefault: true,
@@ -162,7 +164,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/QLD Road Base Map',
                     isDefault: true,
@@ -180,7 +183,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-                ),					
+		        )
+               },				
 				{
                     title: 'AU/VIC Emergency Services Base Map',
                     isDefault: true,
@@ -198,7 +202,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://emergency.vic.gov.au/about-this-site/terms-of-use">' +
                                 '© Emergency Management Victoria</a>',
                         }
-                ),	
+		        )
+               },
 				{
                     title: 'AU/NSW Imagery',
                     isDefault: true,
@@ -216,7 +221,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/NSW LPI Topographic',
                     isDefault: true,
@@ -234,7 +240,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/NSW LPI Map Sheets',
                     isDefault: true,
@@ -251,8 +258,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://maps.six.nsw.gov.au/js/sixmaps/app/coreTerms.html">' +
                                 '© Department of Customer Service 2020</a>',
-                        }
-                ),
+                       }
+		       )
+               },
 				{
                     title: 'AU/TAS Imagery Base Map',
                     isDefault: true,
@@ -269,8 +277,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
-                        }
-                ),
+                       }
+		       )
+               },
 				{
                     title: 'AU/TAS Topographic Base Map',
                     isDefault: true,
@@ -287,8 +296,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY 3.0 AU)</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 				{
                     title: 'AU/TAS Emergency Services Map',
                     isDefault: true,
@@ -306,7 +316,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/TAS Tasmap Raster',
                     isDefault: true,
@@ -323,8 +334,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=copyrightPage.do">' +
                                 '© State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 					
 				{
                     title: 'AU/SA Imagery Base Map',
@@ -343,7 +355,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU/SA Topographic Base Map',
                     isDefault: true,
@@ -360,8 +373,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
-                        }
-                ),					
+                         }
+		         )
+               },				
 				{
                     title: 'AU/SA Road Base Map',
                     isDefault: true,
@@ -378,8 +392,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://creativecommons.org/licenses/by/4.0/">' +
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
-                        }
-                ),							
+                         }
+		         )
+               },						
 				{
                     title: 'AU Get Lost Maps',
                     isDefault: true,
@@ -396,8 +411,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.getlost.com.au/">' +
                                 'GetLost Maps</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 
 				{
                     title: 'AU Geoscience National Base Map',
@@ -415,8 +431,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 				{
                     title: 'AU Geoscience Topographic',
                     isDefault: true,
@@ -433,8 +450,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 				{
                     title: 'AU NATMAP 1:250,000',
                     isDefault: true,
@@ -452,7 +470,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
                         }
-                ),
+		        )
+               },
 				{
                     title: 'AU NATMAP 1:100,000',
                     isDefault: true,
@@ -469,8 +488,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
-                        }
-                ),
+                         }
+		         )
+               },
 				{
                     title: 'AU NATMAP 1:50,000 QLD',
                     isDefault: true,
@@ -487,8 +507,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
-                        }
-                ),
+                         }
+		         )
+               },
                 {
                     title: 'Yandex Map',
                     description: '(English and Cyrillic)',
@@ -1385,7 +1406,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             shortName: 'cycling_trails',
                             isOverlayTransparent: true,
                             attribution: '<a href="https://cycling.waymarkedtrails.org/">Waymarked Cycling Trails</a>',
-                        })
+                        }
+		        )
                 },
                 {
                     title: 'Waymarked Hiking Trails',
@@ -1402,7 +1424,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             shortName: 'hiking_trails',
                             isOverlayTransparent: true,
                             attribution: '<a href="https://hiking.waymarkedtrails.org/">Waymarked Hiking Trails</a>',
-                        })
+                        }
+		      )
                 },
                 {
                     title: 'Slovakia Topographic',
