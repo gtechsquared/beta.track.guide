@@ -57,6 +57,24 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
+                    title: 'OpenSeaMap',
+                    description: ' (Nautical overlay)',
+                    isDefault: true,
+                    layer: L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+                        {
+                            code: 'OSmp',
+                            isOverlay: true,
+                            isOverlayTransparent: true,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'OSmap',
+                            attribution: '<a href="https://www.openstreetmap.org/copyright">' +
+                                '&copy; OpenStreetMap contributors</a>',
+                        }
+                    )
+                },
+                {
                     title: 'OpenStreetMap Humanitarian',
                     isDefault: true,
                     layer: L.tileLayer('https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
@@ -1751,6 +1769,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'OSM Atlas',
                 'OpenStreetMap OPNVKarte',
                 'OpenRailwayMap',
+                'OpenSeaMap',
             ],
         },
         {
@@ -1953,6 +1972,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         // line overlays
         'Google Hybrid',
         'OpenRailwayMap',
+        'OpenSeaMap',
         'Waymarked Hiking Trails',
         'Waymarked Cycling Trails',
         'OpenStreetMap GPS traces',
