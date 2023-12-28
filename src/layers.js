@@ -120,14 +120,14 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         'https://tiles-cdn.koordinates.com/services;key=08ed433a5d3d4f77a35e04c1ae3c8756/' +
                         'tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png',
                         {
-                            code: 'NZ260',
+                            code: 'NZ25',
                             isOverlay: true,
                             isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 15,
                             print: true,
                             jnx: true,
-                            shortName: 'NZMS260',
+                            shortName: 'NZTOPO250',
                             attribution:
                                 '<a href="https://www.linz.govt.nz/copyright">' +
                                 'Toitū Te Whenua Land Information New Zealand</a>',
