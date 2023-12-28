@@ -175,7 +175,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 'Toitū Te Whenua Land Information New Zealand and MapPast</a>',
                         }
                     )
-                },   
+                },
                 {
                     title: 'NZ Imagery Base Map',
                     description: ' (current imagery)',
