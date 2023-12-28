@@ -352,7 +352,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             jnx: true,
                             shortName: 'TASraster',
                             attribution:
-                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage='+
+                                '<a href="https://www.tasmap.tas.gov.au/copyrightPage.do?staticpage=' +
                                 'copyrightPage.do"> © State of Tasmania (Creative Commons BY-NC-ND 3.0 AU)</a>',
                         }
                     )
