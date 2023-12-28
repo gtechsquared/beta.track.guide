@@ -956,8 +956,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
-                            'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png',
-                            'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}@2x.png',
+                            'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
+                            'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}@2x.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
                         ],
                         {
                             code: 'Ocm',
@@ -976,8 +978,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
-                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png',
-                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}@2x.png',
+                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
+                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}@2x.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
                         ],
                         {
                             code: 'Oso',
@@ -986,6 +990,28 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             print: true,
                             jnx: true,
                             shortName: 'osm_outdoors',
+                            attribution:
+                                '<a href="https://www.thunderforest.com/maps/outdoors/">Thunderforest Outdoors</a>',
+                        }
+                    )
+                {
+                    title: 'OSM Atlas',
+                    description: ' (OSM/Thunderforest Atlas style)',
+                    isDefault: false,
+                    layer: new RetinaTileLayer(
+                        [
+                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
+                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}@2x.png'+
+                            '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
+                        ],
+                        {
+                            code: 'Osa',
+                            isOverlay: false,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'osm_atlas',
                             attribution:
                                 '<a href="https://www.thunderforest.com/maps/outdoors/">Thunderforest Outdoors</a>',
                         }
@@ -1596,6 +1622,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'CyclOSM',
                 'OpenCycleMap',
                 'OSM Outdoors',
+                'OSM Atlas',
                 'OpenStreetMap OPNVKarte',
             ],
         },
@@ -1711,6 +1738,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'OpenStreetMap Humanitarian',
         'OpenCycleMap',
         'OSM Outdoors',
+        'OSM Atlas',
         'OpenStreetMap OPNVKarte',
         // Satellite
         'ESRI Satellite',
