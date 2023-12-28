@@ -956,9 +956,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
-                            'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png'+
+                            'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
-                            'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}@2x.png'+
+                            'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}@2x.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
                         ],
                         {
@@ -978,9 +978,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
-                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png'+
+                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
-                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}@2x.png'+
+                            'https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}@2x.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
                         ],
                         {
@@ -1001,9 +1001,9 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: new RetinaTileLayer(
                         [
-                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}.png'+
+                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
-                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}@2x.png'+
+                            'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}@2x.png' +
                             '?apikey=cf406f30bfc54296a9d573ced1e9d6cf',
                         ],
                         {
