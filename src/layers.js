@@ -98,7 +98,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         'https://tiles-cdn.koordinates.com/services;key=08ed433a5d3d4f77a35e04c1ae3c8756/' +
                         'tiles/v4/layer=50767/EPSG:3857/{z}/{x}/{y}.png',
                         {
-                            code: 'NZ5',
+                            code: 'NZ50',
                             isOverlay: true,
                             isOverlayTransparent: false,
                             scaleDependent: false,
@@ -124,7 +124,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             isOverlay: true,
                             isOverlayTransparent: false,
                             scaleDependent: false,
-                            maxNativeZoom: 15,
+                            maxNativeZoom: 14,
                             print: true,
                             jnx: true,
                             shortName: 'NZTOPO250',
@@ -187,7 +187,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             code: 'NZi',
                             isOverlay: false,
                             scaleDependent: false,
-                            maxNativeZoom: 15,
+                            maxNativeZoom: 18,
                             print: true,
                             jnx: true,
                             shortName: 'NZimagery',
