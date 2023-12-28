@@ -118,7 +118,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: true,
                     layer: L.tileLayer(
                         'https://tiles-cdn.koordinates.com/services;key=08ed433a5d3d4f77a35e04c1ae3c8756/' +
-                        'tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png'
+                        'tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png',
                         {
                             code: 'NZ260',
                             isOverlay: true,
