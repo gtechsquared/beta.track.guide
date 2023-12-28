@@ -122,7 +122,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'Google Hybrid',
-                    isDefault: false,
+                    isDefault: true,
                     layer: new L.Layer.GoogleHybrid(
                         {
                             code: 'Gh',
