@@ -23,7 +23,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
     const layersDefs = [
                 {
                     title: 'OpenStreetMap',
-                    description: '(OSM default style)',
+                    description: ' (OSM default style)',
                     isDefault: true,
                     layer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                         {
@@ -33,6 +33,24 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             print: true,
                             jnx: true,
                             shortName: 'osm',
+                            attribution: '<a href="https://www.openstreetmap.org/copyright">' +
+                                '&copy; OpenStreetMap contributors</a>',
+                        }
+                    )
+                },
+                {
+                    title: 'OpenRailwayMap',
+                    description: ' (Railway overlay)',
+                    isDefault: true,
+                    layer: L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',
+                        {
+                            code: 'ORM',
+                            isOverlay: true,
+                            isOverlayTransparent: true,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'ORMap',
                             attribution: '<a href="https://www.openstreetmap.org/copyright">' +
                                 '&copy; OpenStreetMap contributors</a>',
                         }
@@ -160,7 +178,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     description: ' (1939-1979)',
                     isDefault: true,
                     layer: L.tileLayer(
-                        'http://au.mapspast.org.nz/3857/nzms1-1979/{z}/{x}/{y}.png/',
+                        'http://au.mapspast.org.nz/3857/nzms1-1979/{z}/{x}/{y}.png',
                         {
                             code: 'NZ1',
                             isOverlay: true,
@@ -1732,6 +1750,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'OSM Outdoors',
                 'OSM Atlas',
                 'OpenStreetMap OPNVKarte',
+                'OpenRailwayMap',
             ],
         },
         {
@@ -1933,6 +1952,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
 
         // line overlays
         'Google Hybrid',
+        'OpenRailwayMap',
         'Waymarked Hiking Trails',
         'Waymarked Cycling Trails',
         'OpenStreetMap GPS traces',
