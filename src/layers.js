@@ -126,7 +126,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
                                 'QTOPO © State of Queensland 2023</a>',
                         }
-                    )  
+                    )
                 },
                 {
                     title: 'AU/QLD QTOPO Base Map',
@@ -187,7 +187,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 'QTOPO © State of Queensland 2023</a>',
                         }
                     )
-                },                                
+                },
                 {
                     title: 'AU/VIC Emergency Services Base Map',
                     isDefault: true,
@@ -404,7 +404,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                                 '© Government of South Australia (Creative Commons Attribution 4.0 Licence)</a>',
                          }
                     )
-               },                                                
+               },
                 {
                     title: 'AU Get Lost Maps',
                     isDefault: true,
@@ -1592,7 +1592,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'Bing Satellite',
                 'ESRI Satellite',
                 'Yandex Map',
-                'Yandex Satellite', 
+                'Yandex Satellite',
             ],
         },
         {
@@ -1620,10 +1620,10 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'AU NATMAP 1:100,000',
                 'AU NATMAP 1:50,000 QLD',
                         ],
-        },                                                
+        },
        {
             title: 'Europe',
-            layers: [                                
+            layers: [
                 'Finland Topographic',
                 'France Topographic',
                 'Great Britain Topographic',
@@ -1638,7 +1638,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         },
        {
             title: 'Russia',
-            layers: [                                
+            layers: [
                 'Caucasus 1:100,000',
                 'Caucasus 1:50,000',
                 'GGC Topographic 1:25,000',
@@ -1659,7 +1659,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         },
        {
             title: 'Soviet Mapping',
-            layers: [                                
+            layers: [
                 'Eurasia 1:2,500,000',
                 'Topo 1:25,000',
                 'Topo 1:50,000',
@@ -1707,7 +1707,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         // Commercial maps
         'Google Map',
         'Google Terrain',
-        'Yandex Map',                
+        'Yandex Map',
         // Topo maps
         'AU/QLD QTOPO Base Map',
         'AU/QLD Road Names',
