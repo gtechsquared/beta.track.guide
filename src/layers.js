@@ -1636,7 +1636,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'Races',
                 'O-sport',
                 'Wikimapia',
-                'Mountain passes (Westra)'
+                'Mountain passes (Westra)',
 		'Mountains by Alexander Purikov',
                 'geocaching.su',
             ],
@@ -1726,7 +1726,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
 	'Montenegro topo 250m',
 	'Norway Topographic Sheets',
         'Norway Topographic',
-        'Norway roads'
+        'Norway roads',
         'Slovakia Topographic',
         'Spain Topographic',
         'Switzerland Topographic',
