@@ -644,7 +644,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         ),
                         {
                             code: 'T',
-                            isOverlay: false,
+                            isOverlay: true,
+			    isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 13,
                             noCors: false,
@@ -1708,7 +1709,6 @@ class LayerGroupWithOptions extends L.LayerGroup {
         // Commercial maps
         'Google Map',
         'Google Terrain',
-        'Google Hybrid',
         'Yandex Map',		
         // Topo maps
 	'AU/QLD QTOPO Base Map',
@@ -1736,6 +1736,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
 	'Eurasia 1:2,500,000',
 	'Finland Topographic',
         'France Topographic',
+
 	'GGC Topographic 1:25,000',
 	'GGC Topographic 1:50,000',
         'GGC Topographic 1:100,000',
@@ -1765,7 +1766,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
         '#custom-top',
 
         // line overlays
-        'Waymarked Hiking Trails',
+        'Google Hybrid',
+	'Waymarked Hiking Trails',
         'Waymarked Cycling Trails',
         'OpenStreetMap GPS traces',
         'Strava heatmap (all)',
