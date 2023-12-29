@@ -1002,7 +1002,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             maxNativeZoom: 14,
                             print: true,
                             jnx: true,
-                            shortName: ''NTWM1ortho',
+                            shortName: 'NTWM1ortho',
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
@@ -1024,7 +1024,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             maxNativeZoom: 14,
                             print: true,
                             jnx: true,
-                            shortName: ''NTWM2ortho',
+                            shortName: 'NTWM2ortho',
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
@@ -1046,7 +1046,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             maxNativeZoom: 14,
                             print: true,
                             jnx: true,
-                            shortName: ''NTWM3topo',
+                            shortName: 'NTWM3topo',
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
@@ -1068,7 +1068,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             maxNativeZoom: 14,
                             print: true,
                             jnx: true,
-                            shortName: ''NTWM4topo',
+                            shortName: 'NTWM4topo',
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
