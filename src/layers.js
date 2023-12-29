@@ -823,14 +823,14 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     layer: L.tileLayer(
                         'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/Christmas%20Island/{z}/{x}/{y}.png',
                         {
-                            code: 'GA502',
+                            code: 'GAx',
                             isOverlay: true,
                             isOverlayTransparent: false,
                             scaleDependent: false,
                             maxNativeZoom: 12,
                             print: true,
                             jnx: true,
-                            shortName: 'GAR502',
+                            shortName: 'GAxmas',
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
