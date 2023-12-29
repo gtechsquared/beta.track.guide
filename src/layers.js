@@ -563,7 +563,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                },
                 {
                     title: 'AU Get Lost Maps',
-                    isDefault: true,
+                    isDefault: false,
                     layer: L.tileLayer(
                         'https://live.getlost.com.au/{z}/{x}/{y}.jpg',
                         {
@@ -583,6 +583,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'AU Geoscience National Base Map',
+                    description: ' (updated 2012)',
                     isDefault: true,
                     layer: L.tileLayer(
                         'https://services.ga.gov.au/gis/rest/services/NationalBaseMap/' +
@@ -604,7 +605,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                },
                 {
                     title: 'AU Geoscience Topographic',
-                    isDefault: true,
+                    description: ' (supreseeded)',
+                    isDefault: false,
                     layer: L.tileLayer(
                         'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/' +
                         'MapServer/tile/{z}/{y}/{x}?blankTile=false',
@@ -625,6 +627,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                },
                 {
                     title: 'AU NATMAP 1:250,000',
+                    description: ' (2005-2012)',
                     isDefault: true,
                     layer: L.tileLayer(
                         'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/' +
@@ -645,11 +648,12 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'AU NATMAP 1:100,000',
-                    isDefault: true,
+                    title: 'AU Geoscience 1:100,000',
+                    description: ' (1988-2003)',
+                    isDefault: false,
                     layer: L.tileLayer(
-                        'https://services.ga.gov.au/gis/rest/services/NATMAP_Maps_250K_2008/' +
-                        'MapServer/tile/{z}/{y}/{x}?blankTile=false',
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
+                        Geoscience%20100k/{z}/{x}/{y}.png',
                         {
                             code: 'GS4',
                             isOverlay: true,
@@ -666,8 +670,31 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
-                    title: 'AU NATMAP 1:50,000 QLD',
-                    isDefault: true,
+                    title: 'AU Geoscience 1:100,000 Unpublished',
+                    description: ' (Central Australia 1988-2003)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
+                        Geoscience_100k_unpublished/{z}/{x}/{y}.png',
+                        {
+                            code: 'GSUN',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GA10UN0',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU Geoscience 1:50,000',
+                    description: ' (Northern Australia 1988-2003)',
+                    isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.eu-central-1.wasabisys.com/au-maps.track.guide/GA50k_QLD/{z}/{x}/{y}.png',
                         {
@@ -682,6 +709,279 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.ga.gov.au/copyright">' +
                                 '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/ACT Geoscience 1:100,000',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/ACT_100k_Topographic/{z}/{x}/{y}.png',
+                        {
+                            code: 'GSac',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAact',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU R501 1:253,440',
+                    description: ' (1943-1951)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/R501/{z}/{x}/{y}.png',
+                        {
+                            code: 'GA501',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAR501',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU R502 1:250,000',
+                    description: ' (1951-1968)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/R502_Australia_250k/{z}/{x}/{y}.png',
+                        {
+                            code: 'GA502',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAR502',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU Norfolk Island 1:25,000',
+                    description: ' (ed2 2010)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/Norfolk%20Island/{z}/{x}/{y}.png',
+                        {
+                            code: 'GANLK',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 16,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GANLK25',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU Cocos Island 1:25,000',
+                    description: ' (ed1 2010)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/Cocos%20Islands/{z}/{x}/{y}.png',
+                        {
+                            code: 'GAco',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GACocos',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU Christmas Island 1:25,000',
+                    description: ' (1951-1968)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/Christmas%20Island/{z}/{x}/{y}.png',
+                        {
+                            code: 'GA502',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 12,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GAR502',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD GW Sunshine Coast 1:25,000',
+                    description: ' (Great Walk Series 2017)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/GW_SunShineCoast/{z}/{x}/{y}.png',
+                        {
+                            code: 'GWSC',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GWsun',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD GW Gold Coast 1:25,000',
+                    description: ' (Great Walk Series 2010)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/GW_GoldCoast/{z}/{x}/{y}.png',
+                        {
+                            code: 'GWGC',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GWGoldCoast',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD GW Fraser Island 1:50,000',
+                    description: ' (Great Walk Series 2011)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/GW_Fraser_Is/{z}/{x}/{y}.png',
+                        {
+                            code: 'GWFI',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 14,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GWFraser',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD GW Conondale 1:25,000',
+                    description: ' (Great Walk Series 2017)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/GW_Conondale/{z}/{x}/{y}.png',
+                        {
+                            code: 'GWCO',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'GWcon',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD Bellthorpe National Park',
+                    description: ' (Fire Management)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/beta.topodude.com.au/QPWS_Bellthorpe/{z}/{x}/{y}.png',
+                        {
+                            code: 'QNPB',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'QNPBell',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD Mt Mee Forest Trails',
+                    description: ' (QPWS Trail Map)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://mapwarper.net/maps/tile/77631/{z}/{x}/{y}.png',
+                        {
+                            code: 'QNPM',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'QNPMee',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/QLD Wrattens and Kandanga SF',
+                    description: ' (State Forest Map 2008)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/beta.topodude.com.au/' +
+                        'QPWS_Wrattens_Kandanga/{z}/{x}/{y}.png',
+                        {
+                            code: 'QNPWK',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'QNPWrat',
+                            attribution:
+                                '<a href="https://www.resources.qld.gov.au/legal/copyright">' +
+                                'QTOPO © State of Queensland 2023</a>',
                          }
                     )
                 },
@@ -1802,6 +2102,13 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'AU/QLD QTOPO Base Map',
                 'AU/QLD Road Names',
                 'AU/QLD Road Base Map',
+                'AU/QLD GW Sunshine Coast 1:25,000',
+                'AU/QLD GW Gold Coast 1:25,000',
+                'AU/QLD GW Fraser Island 1:50,000',
+                'AU/QLD GW Conondale 1:25,000',
+                'AU/QLD Bellthorpe National Park',
+                'AU/QLD Mt Mee Forest Trails',
+                'AU/QLD Wrattens and Kandanga SF',
                 'AU/VIC Emergency Services Base Map',
                 'AU/NSW Imagery',
                 'AU/NSW LPI Topographic',
@@ -1817,8 +2124,15 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'AU Geoscience National Base Map',
                 'AU Geoscience Topographic',
                 'AU NATMAP 1:250,000',
-                'AU NATMAP 1:100,000',
-                'AU NATMAP 1:50,000 QLD',
+                'AU Geoscience 1:100,000',
+                'AU Geoscience 1:100,000 Unpublished',
+                'AU Geoscience 1:50,000',
+                'AU R501 1:253,440',
+                'AU R502 1:250,000',
+                'AU/ACT Geoscience 1:100,000',
+                'AU Norfolk Island 1:25,000',
+                'AU Cocos Island 1:25,000',
+                'AU Christmas Island 1:25,000',
                         ],
         },
        {
@@ -1918,6 +2232,13 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'AU/QLD QTOPO Base Map',
         'AU/QLD Road Names',
         'AU/QLD Road Base Map',
+        'AU/QLD GW Sunshine Coast 1:25,000',
+        'AU/QLD GW Gold Coast 1:25,000',
+        'AU/QLD GW Fraser Island 1:50,000',
+        'AU/QLD GW Conondale 1:25,000',
+        'AU/QLD Bellthorpe National Park',
+        'AU/QLD Mt Mee Forest Trails',
+        'AU/QLD Wrattens and Kandanga SF',
         'AU/VIC Emergency Services Base Map',
         'AU/NSW LPI Topographic',
         'AU/NSW LPI Map Sheets',
@@ -1930,8 +2251,15 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'AU Geoscience National Base Map',
         'AU Geoscience Topographic',
         'AU NATMAP 1:250,000',
-        'AU NATMAP 1:100,000',
-        'AU NATMAP 1:50,000 QLD',
+        'AU Geoscience 1:100,000',
+        'AU Geoscience 1:100,000 Unpublished',
+        'AU Geoscience 1:50,000',
+        'AU R501 1:253,440',
+        'AU R502 1:250,000',
+        'AU/ACT Geoscience 1:100,000',
+        'AU Norfolk Island 1:25,000',
+        'AU Cocos Island 1:25,000',
+        'AU Christmas Island 1:25,000',
 
         // local base layers
 
