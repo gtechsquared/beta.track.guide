@@ -716,7 +716,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     title: 'AU/ACT Geoscience 1:100,000',
                     isDefault: false,
                     layer: L.tileLayer(
-                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/ACT_100k_Topographic/{z}/{x}/{y}.png',
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
+                        'ACT_100k_Topographic/{z}/{x}/{y}.png',
                         {
                             code: 'GSac',
                             isOverlay: true,
@@ -758,7 +759,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     description: ' (1951-1968)',
                     isDefault: false,
                     layer: L.tileLayer(
-                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/R502_Australia_250k/{z}/{x}/{y}.png',
+                        'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
+                        'R502_Australia_250k/{z}/{x}/{y}.png',
                         {
                             code: 'GA502',
                             isOverlay: true,
