@@ -1191,7 +1191,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png',
+                        'KakaduNationalPark/{z}/{x}/{y}.png',
                         {
                             code: 'NTK',
                             isOverlay: true,
