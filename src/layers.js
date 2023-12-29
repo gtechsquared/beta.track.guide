@@ -653,7 +653,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
-                        Geoscience%20100k/{z}/{x}/{y}.png',
+                        'Geoscience%20100k/{z}/{x}/{y}.png',
                         {
                             code: 'GS4',
                             isOverlay: true,
@@ -675,7 +675,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/' +
-                        Geoscience_100k_unpublished/{z}/{x}/{y}.png',
+                        'Geoscience_100k_unpublished/{z}/{x}/{y}.png',
                         {
                             code: 'GSUN',
                             isOverlay: true,
