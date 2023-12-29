@@ -993,7 +993,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WestMacdonnellNationalParkOrtho_2/{z}/{x}/{y}.png'
+                        'WestMacdonnellNationalParkOrtho_2/{z}/{x}/{y}.png',
                         {
                             code: 'NTWM1',
                             isOverlay: true,
@@ -1015,7 +1015,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WestMacdonnellNationalParkOrtho_1/{z}/{x}/{y}.png'
+                        'WestMacdonnellNationalParkOrtho_1/{z}/{x}/{y}.png',
                         {
                             code: 'NTWM2',
                             isOverlay: true,
@@ -1037,7 +1037,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WestMacdonnellNationalPark_1/{z}/{x}/{y}.png'
+                        'WestMacdonnellNationalPark_1/{z}/{x}/{y}.png',
                         {
                             code: 'NTWM3',
                             isOverlay: true,
@@ -1059,7 +1059,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WestMacdonnellNationalPark_2/{z}/{x}/{y}.png'
+                        'WestMacdonnellNationalPark_2/{z}/{x}/{y}.png',
                         {
                             code: 'NTWM4',
                             isOverlay: true,
@@ -1081,7 +1081,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WatarrkaNationalPark/{z}/{x}/{y}.png'
+                        'WatarrkaNationalPark/{z}/{x}/{y}.png',
                         {
                             code: 'NTW1',
                             isOverlay: true,
@@ -1103,7 +1103,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png'
+                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png',
                         {
                             code: 'NTW2',
                             isOverlay: true,
@@ -1125,7 +1125,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'Litchfield_National_Park_Ed05_Ortho/{z}/{x}/{y}.png'
+                        'Litchfield_National_Park_Ed05_Ortho/{z}/{x}/{y}.png',
                         {
                             code: 'NTL1',
                             isOverlay: true,
@@ -1147,7 +1147,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'Litchfield_National_Park_Ed05/{z}/{x}/{y}.png'
+                        'Litchfield_National_Park_Ed05/{z}/{x}/{y}.png',
                         {
                             code: 'NTL2',
                             isOverlay: true,
@@ -1169,7 +1169,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'Uluru_Kata_Tjuta/{z}/{x}/{y}.png'
+                        'Uluru_Kata_Tjuta/{z}/{x}/{y}.png',
                         {
                             code: 'NTU',
                             isOverlay: true,
@@ -1191,7 +1191,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
-                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png'
+                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png',
                         {
                             code: 'NTK',
                             isOverlay: true,
