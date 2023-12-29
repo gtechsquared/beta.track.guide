@@ -988,6 +988,226 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
+                    title: 'AU/NT West Macdonnell NP West (Ortho)',
+                    description: ' (ed1 2009)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WestMacdonnellNationalParkOrtho_2/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTWM1',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 14,
+                            print: true,
+                            jnx: true,
+                            shortName: ''NTWM1ortho',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/NT West Macdonnell NP East (Ortho)',
+                    description: ' (ed1 2009)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WestMacdonnellNationalParkOrtho_1/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTWM2',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 14,
+                            print: true,
+                            jnx: true,
+                            shortName: ''NTWM2ortho',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/NT West Macdonnell NP West (Topo)',
+                    description: ' (ed1 2009)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WestMacdonnellNationalPark_1/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTWM3',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 14,
+                            print: true,
+                            jnx: true,
+                            shortName: ''NTWM3topo',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/NT West Macdonnell NP East (Topo)',
+                    description: ' (ed1 2009)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WestMacdonnellNationalPark_2/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTWM4',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 14,
+                            print: true,
+                            jnx: true,
+                            shortName: ''NTWM4topo',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+        {
+                    title: 'AU/NT Watarrka NP (Topo)',
+                    description: ' (State Forest Map 2008)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                       'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WatarrkaNationalPark/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTW1',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTW1topo',
+                           attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+        {
+                    title: 'AU/NT Watarrka NP (Ortho)',
+                    description: ' (ed1 2010)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTW2',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTW2ortho',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/NT Litchfield NP (Ortho)',
+                    description: ' (ed5 2002)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'Litchfield_National_Park_Ed05_Ortho/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTL1',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTL1ortho',
+                            attribution:
+                                '<a href="https://depws.nt.gov.au/parks-and-wildlife-commission">' +
+                                '© Northern Territory of Australia 2002</a>',
+                         }
+                    )
+                },
+                {
+                    title: 'AU/NT Litchfield NP (Topo)',
+                    description: ' (ed5 2002)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'Litchfield_National_Park_Ed05/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTL2',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTL2topo',
+                            attribution:
+                                '<a href="https://depws.nt.gov.au/parks-and-wildlife-commission">' +
+                                '© Northern Territory of Australia 2002</a>',
+                         }
+                    )
+                },
+        {
+                    title: 'AU/NT Uluru - Kata Tjuta',
+                    description: ' (ed1 1996)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'Uluru_Kata_Tjuta/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTU',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTUtopo',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+        {
+                    title: 'AU/NT Kakadu NP',
+                    description: ' (ed1 1996)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://s3.us-east-1.amazonaws.com/au-nt.track.guide/' +
+                        'WatarrkaNationalParkBack/{z}/{x}/{y}.png'
+                        {
+                            code: 'NTK',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 15,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NTKtopo',
+                            attribution:
+                                '<a href="https://www.ga.gov.au/copyright">' +
+                                '© Commonwealth of Australia (Geoscience Australia) 2021</a>',
+                         }
+                    )
+                },
+                {
                     title: 'Yandex Map',
                     description: '(English and Cyrillic)',
                     isDefault: false,
@@ -2122,6 +2342,16 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'AU/SA Imagery Base Map',
                 'AU/SA Topographic Base Map',
                 'AU/SA Road Base Map',
+                'AU/NT West Macdonnell NP West (Ortho)',
+                'AU/NT West Macdonnell NP East (Ortho)',
+                'AU/NT West Macdonnell NP West (Topo)',
+                'AU/NT West Macdonnell NP East (Topo)',
+                'AU/NT Watarrka NP (Topo)',
+                'AU/NT Watarrka NP (Ortho)',
+                'AU/NT Litchfield NP (Ortho)',
+                'AU/NT Litchfield NP (Topo)',
+                'AU/NT Uluru - Kata Tjuta',
+                'AU/NT Kakadu NP',
                 'AU Get Lost Maps',
                 'AU Geoscience National Base Map',
                 'AU Geoscience Topographic',
@@ -2249,6 +2479,16 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'AU/TAS Tasmap Raster',
         'AU/SA Topographic Base Map',
         'AU/SA Road Base Map',
+        'AU/NT West Macdonnell NP West (Ortho)',
+        'AU/NT West Macdonnell NP East (Ortho)',
+        'AU/NT West Macdonnell NP West (Topo)',
+        'AU/NT West Macdonnell NP East (Topo)',
+        'AU/NT Watarrka NP (Topo)',
+        'AU/NT Watarrka NP (Ortho)',
+        'AU/NT Litchfield NP (Ortho)',
+        'AU/NT Litchfield NP (Topo)',
+        'AU/NT Uluru - Kata Tjuta',
+        'AU/NT Kakadu NP',
         'AU Get Lost Maps',
         'AU Geoscience National Base Map',
         'AU Geoscience Topographic',
