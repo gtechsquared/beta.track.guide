@@ -2309,7 +2309,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             code: 'Eeko',
                             isOverlay: true,
                             isOverlayTransparent: true,
-                            maxNativeZoom: 14,
+                            maxNativeZoom: 13,
                             scaleDependent: true,
                             print: true,
                             jnx: true,
