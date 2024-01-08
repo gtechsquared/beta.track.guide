@@ -2300,6 +2300,24 @@ class LayerGroupWithOptions extends L.LayerGroup {
                         }
                     )
                 },
+                {
+                    title: 'EEKO Russian Topographic',
+                    description: '<a href="https://portal.fppd.cgkipd.ru/main"> Rosreestr</a>',
+                    isDefault: false,
+                    layer: L.tileLayer('https://ngw.fppd.cgkipd.ru/tile/56/{z}/{x}/{y}.png',
+                        {
+                            code: 'Eeko',
+                            isOverlay: true,
+                            isOverlayTransparent: true,
+                            maxNativeZoom: 14,
+                            scaleDependent: true,
+                            print: true,
+                            jnx: true,
+                            shortName: 'eekomap',
+                            attribution: '© Единая электронная картографическая основа России'
+                        }
+                    )
+                },
     ];
 
     const groupsDefs = [
