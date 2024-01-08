@@ -55,23 +55,19 @@ class GoogleEarthMap extends ExternalMap {
 const ExternalMaps = L.Control.extend({
     options: {
         externalMaps: [
-            {title: 'Google', externalMap: new ExternalMap('https://www.google.com/maps/@{lat},{lng},{zoom}z', 3, 21)},
-            {
-                title: 'Yandex',
-                externalMap: new ExternalMap('https://yandex.ru/maps/?ll={lng}%2C{lat}&z={zoom}', 2, 21),
-            },
             {
                 title: 'OpenStreetMap',
                 externalMap: new ExternalMap('https://www.openstreetmap.org/#map={zoom}/{lat}/{lng}', 0, 19),
             },
+            {title: 'Google', externalMap: new ExternalMap('https://www.google.com/maps/@{lat},{lng},{zoom}z', 3, 21)},
             {title: 'Google Earth 3D', externalMap: new GoogleEarthMap()},
-            {
-                title: 'Mapy.cz',
-                externalMap: new ExternalMap('https://en.mapy.cz/turisticka?x={lng}&y={lat}&z={zoom}', 2, 19),
-            },
             {
                 title: 'Wikimapia',
                 externalMap: new ExternalMap('https://wikimapia.org/#lat={lat}&lon={lng}&z={zoom}', 3, 22),
+            },
+            {
+                title: 'Yandex',
+                externalMap: new ExternalMap('https://yandex.ru/maps/?ll={lng}%2C{lat}&z={zoom}', 2, 21),
             },
         ],
     },
