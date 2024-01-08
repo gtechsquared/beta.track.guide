@@ -127,6 +127,30 @@ class LayerGroupWithOptions extends L.LayerGroup {
                     )
                 },
                 {
+                    title: 'NZ Māori Place Names',
+                    description: ' (Ingoa Wāhi o Aotearoa)',
+                    isDefault: false,
+                    layer: L.tileLayer(
+                        'https://api.mapbox.com/styles/v1/maorimaps/ckpeyyhsj0q7o17mw292l1pgc/' +
+                        'tiles/256/{z}/{x}/{y}@2x?access_token=' +
+                        'pk.eyJ1IjoibWFvcmltYXBzIiwiYSI6ImNrcGV1czZsMTBha3oycm8ydnN1bzQzcHUifQ.' +
+                        'Y8HgJjMGT7f3GBpxeF9IVQ',
+                        {
+                            code: 'NZMM',
+                            isOverlay: true,
+                            isOverlayTransparent: false,
+                            scaleDependent: false,
+                            maxNativeZoom: 18,
+                            print: true,
+                            jnx: true,
+                            shortName: 'NZMMAP',
+                            attribution:
+                                '<a href="https://www.maorimaps.com/info">' +
+                                'Te Potiki National Trust Limited</a>',
+                        }
+                    )
+                },
+                {
                     title: 'NZ NZTOPO50',
                     description: ' (current series)',
                     isDefault: true,
@@ -2312,6 +2336,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
             layers: [
                 'NZ NZTOPO50',
                 'NZ NZTOPO250',
+                'NZ Māori Place Names',
                 'NZ NZMS260 1:50,000',
                 'NZ NZMS1 1:63,360',
                 'NZ Imagery Base Map',
@@ -2459,6 +2484,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         // Topo maps
         'NZ NZTOPO50',
         'NZ NZTOPO250',
+        'NZ Māori Place Names',
         'NZ NZMS260 1:50,000',
         'NZ NZMS1 1:63,360',
         'AU/QLD QTOPO Base Map',
