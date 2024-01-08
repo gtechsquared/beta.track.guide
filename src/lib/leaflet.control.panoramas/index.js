@@ -85,24 +85,6 @@ L.Control.Panoramas = L.Control.extend({
         getProviders: function() {
             return [
                 {
-                    name: 'google',
-                    title: 'Google street view',
-                    provider: googleProvider,
-                    layerOptions: {zIndex: 10},
-                    code: 'g',
-                    selected: ko.observable(true),
-                    mapMarkerType: 'normal'
-                },
-                {
-                    name: 'wikimedia',
-                    title: 'Wikimedia commons',
-                    provider: wikimediaProvider,
-                    layerOptions: {opacity: 0.7, zIndex: 9},
-                    code: 'w',
-                    selected: ko.observable(false),
-                    mapMarkerType: 'slim'
-                },
-                {
                     name: 'mapillary',
                     title: 'Mapillary',
                     provider: mapillaryProvider,
@@ -112,14 +94,23 @@ L.Control.Panoramas = L.Control.extend({
                     mapMarkerType: 'normal'
                 },
                 {
-                    name: 'mapycz',
-                    title: 'mapy.cz',
-                    provider: mapyczProvider,
-                    layerOptions: {opacity: 0.7, zIndex: 8},
-                    code: 'c',
-                    selected: ko.observable(false),
+                    name: 'google',
+                    title: 'Google Street View',
+                    provider: googleProvider,
+                    layerOptions: {zIndex: 10},
+                    code: 'g',
+                    selected: ko.observable(true),
                     mapMarkerType: 'normal'
-                }
+                },
+                {
+                    name: 'wikimedia',
+                    title: 'Wikimedia Commons',
+                    provider: wikimediaProvider,
+                    layerOptions: {opacity: 0.7, zIndex: 9},
+                    code: 'w',
+                    selected: ko.observable(false),
+                    mapMarkerType: 'slim'
+                },  
             ];
         },
 
