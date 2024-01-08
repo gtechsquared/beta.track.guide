@@ -2302,7 +2302,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'EEKO Russian Topographic',
-                    description: '<a href="https://portal.fppd.cgkipd.ru/main"> Rosreestr</a>',
+                    description: '<a href="https://portal.fppd.cgkipd.ru/main"> Rosreestr (current)</a>',
                     isDefault: false,
                     layer: L.tileLayer('https://ngw.fppd.cgkipd.ru/tile/56/{z}/{x}/{y}.png',
                         {
@@ -2434,6 +2434,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 'GGC Topographic 1:50,000',
                 'GGC Topographic 1:100,000',
                 'GGC Topographic 1:200,000',
+                'EEKO Russian Topographic',
                 'ArbaletMO',
                 'Mountains by Aleksey Tsvetkov',
                 'Slazav mountains',
@@ -2559,6 +2560,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
         'GGC Topographic 1:50,000',
         'GGC Topographic 1:100,000',
         'GGC Topographic 1:200,000',
+        'EEKO Russian Topographic',
         'Great Britain Topographic',
         'Montenegro 1:25,000',
         'Norway Topographic Sheets',
