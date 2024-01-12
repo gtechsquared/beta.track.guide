@@ -2,7 +2,7 @@ import secrets from './secrets';
 
 const config = {
     caption: `
-        <a href="https://help.track.guide">Documentation</a> |
+        <a href="https://help.track.guide">Help</a> |
         <a href="https://blog.track.guide">News</a> |
         <a href="mailto:hello@track.guide" target="_self">hello@track.guide</a>`,
     defaultLocation: [-27.53476, 153.05225],
