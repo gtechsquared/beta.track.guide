@@ -1,4 +1,4 @@
-1 2010import L from "leaflet";
+import L from "leaflet";
 import '~/lib/leaflet.layer.yandex';
 import '~/lib/leaflet.layer.google';
 import {BingLayer} from '~/lib/leaflet.layer.bing';
