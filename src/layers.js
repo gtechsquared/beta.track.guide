@@ -1,4 +1,4 @@
-import L from "leaflet";
+1 2010import L from "leaflet";
 import '~/lib/leaflet.layer.yandex';
 import '~/lib/leaflet.layer.google';
 import {BingLayer} from '~/lib/leaflet.layer.bing';
@@ -844,7 +844,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                 },
                 {
                     title: 'AU Christmas Island 1:25,000',
-                    description: ' (1951-1968)',
+                    description: ' (ed1 2010)',
                     isDefault: false,
                     layer: L.tileLayer(
                         'https://s3.ap-southeast-2.amazonaws.com/au.topodude.com.au/Christmas%20Island/{z}/{x}/{y}.png',
