@@ -28,7 +28,8 @@ L.Control.Coordinates = L.Control.extend({
             formats.UTM,
             formats.UTMREF,
             formats.QTH,
-            formats.NAC
+            formats.NAC,
+            formats.NZTM
         ],
 
         initialize: function(options) {
