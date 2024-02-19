@@ -292,7 +292,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
                     selectedLayer: ko.observable(),
                     selectedFormat: ko.observable(),
                     received: ko.observable(false),
-                    error: ko.observable(""),
+                    error: ko.observable(''),
                 },
                 buttonClicked: function buttonClicked(callbackN) {
                     const fieldValues = {
@@ -306,7 +306,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
                         type: dialogModel.type(),
                         wmsLayers: dialogModel.wmsLayers(),
                         wmsFormat: dialogModel.wmsFormat(),
-                        wmsTransparent: dialogModel.wmsTransparent()
+                        wmsTransparent: dialogModel.wmsTransparent(),
                     };
                     buttons[callbackN].callback(fieldValues);
                 },
@@ -512,18 +512,42 @@ function enableConfig(control, {layers, customLayersOrder}) {
 
         createCustomLayer: function (fieldValues) {
             const serialized = this.serializeCustomLayer(fieldValues);
-            const tileLayer = new L.Layer.CustomLayer(fieldValues.url, {
-                isOverlay: fieldValues.isOverlay,
-                tms: fieldValues.tms,
-                maxNativeZoom: fieldValues.maxZoom,
-                scaleDependent: fieldValues.scaleDependent,
-                print: true,
-                jnx: true,
-                code: serialized,
-                noCors: true,
-                isTop: fieldValues.isTop,
-            });
+            let tileLayer;
+            // Check if the layer type is WMS
+            if (fieldValues.type === 'wms') {
+                // Configuration specific to WMS layers
+                const wmsOptions = {
+                    isOverlay: fieldValues.isOverlay,
+                    maxNativeZoom: fieldValues.maxZoom,
+                    // maxZoom: L.default.maxZoom, // Assuming L.default.maxZoom is defined somewhere as in your original snippet c.default.maxZoom
+                    layers: fieldValues.wmsLayers,
+                    format: fieldValues.wmsFormat,
+                    transparent: fieldValues.wmsTransparent,
+                };
 
+                // Clean up undefined or empty options
+                Object.keys(wmsOptions).forEach((key) => {
+                    if (wmsOptions[key] === '') delete wmsOptions[key];
+                });
+
+                tileLayer = L.tileLayer.wms(fieldValues.url.split('?')[0], wmsOptions);
+                delete tileLayer.wmsParams.isOverlay;
+                delete tileLayer.wmsParams.maxNativeZoom;
+                // delete tileLayer.wmsParams.maxZoom;
+                delete tileLayer.wmsParams.code;
+            } else {
+                tileLayer = new L.Layer.CustomLayer(fieldValues.url, {
+                    isOverlay: fieldValues.isOverlay,
+                    tms: fieldValues.tms,
+                    maxNativeZoom: fieldValues.maxZoom,
+                    scaleDependent: fieldValues.scaleDependent,
+                    print: true,
+                    jnx: true,
+                    code: serialized,
+                    noCors: true,
+                    isTop: fieldValues.isTop,
+                });
+            }
             const customLayer = {
                 title: fieldValues.name,
                 isDefault: false,
