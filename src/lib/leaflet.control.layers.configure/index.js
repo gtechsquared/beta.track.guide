@@ -22,13 +22,13 @@ function enableConfig(control, {layers, customLayersOrder}) {
         _allLayers: [].concat(...layers.map((group) => group.layers)),
         _customLayers: ko.observableArray(),
 
-        onAdd: function (map) {
+        onAdd: function(map) {
             const container = originalOnAdd.call(this, map);
             this.__injectConfigButton();
             return container;
         },
 
-        __injectConfigButton: function () {
+        __injectConfigButton: function() {
             const configButton = L.DomUtil.create('div', 'button icon-settings');
             configButton.title = 'Configure layers';
             this._topRow.appendChild(configButton);
@@ -40,7 +40,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             L.DomEvent.on(newCustomLayerButton, 'click', this.onCustomLayerCreateClicked, this);
         },
 
-        _initializeLayersState: function () {
+        _initializeLayersState: function() {
             let storedLayersEnabled = {};
             const serialized = safeLocalStorage.getItem('layersEnabled');
             if (serialized) {
@@ -74,11 +74,11 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this.updateEnabledLayers();
         },
 
-        _onConfigButtonClick: function () {
+        _onConfigButtonClick: function() {
             this.showLayersSelectWindow();
         },
 
-        _initLayersSelectWindow: function () {
+        _initLayersSelectWindow: function() {
             if (this._configWindow) {
                 return;
             }
@@ -118,7 +118,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             ko.applyBindings(this, container);
         },
 
-        showLayersSelectWindow: function () {
+        showLayersSelectWindow: function() {
             if (this._configWindowVisible || this._customLayerWindow) {
                 return;
             }
@@ -128,7 +128,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this._configWindowVisible = true;
         },
 
-        hideSelectWindow: function () {
+        hideSelectWindow: function() {
             if (!this._configWindowVisible) {
                 return;
             }
@@ -136,18 +136,18 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this._configWindowVisible = false;
         },
 
-        onSelectWindowCancelClicked: function () {
+        onSelectWindowCancelClicked: function() {
             this.hideSelectWindow();
         },
 
-        onSelectWindowResetClicked: function () {
+        onSelectWindowResetClicked: function() {
             if (!this._configWindow) {
                 return;
             }
             [...this._allLayers, ...this._customLayers()].forEach((layer) => layer.checked(layer.isDefault));
         },
 
-        onSelectWindowOkClicked: function () {
+        onSelectWindowOkClicked: function() {
             const newEnabledLayers = [];
             for (let layer of [...this._allLayers, ...this._customLayers()]) {
                 if (layer.checked()) {
@@ -163,7 +163,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this.hideSelectWindow();
         },
 
-        onCustomLayerCreateClicked: function () {
+        onCustomLayerCreateClicked: function() {
             this.showCustomLayerForm(
                 [
                     {
@@ -191,7 +191,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             );
         },
 
-        updateEnabledLayers: function (addedLayers) {
+        updateEnabledLayers: function(addedLayers) {
             const disabledLayers = [...this._allLayers, ...this._customLayers()].filter((l) => !l.enabled);
             disabledLayers.forEach((l) => this._map.removeLayer(l.layer));
             [...this._layers].forEach((l) => this.removeLayer(l.layer));
@@ -227,7 +227,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this.storeEnabledLayers();
         },
 
-        storeEnabledLayers: function () {
+        storeEnabledLayers: function() {
             const layersState = {};
             for (let layer of [...this._allLayers, ...this._customLayers()]) {
                 if (layer.isDefault || layer.enabled || layer.isCustom) {
@@ -238,7 +238,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             safeLocalStorage.setItem('layersEnabled', serialized);
         },
 
-        unserializeState: function (values) {
+        unserializeState: function(values) {
             if (values) {
                 values = values.map((code) => {
                     let newCode = this.loadCustomLayerFromString(code);
@@ -255,7 +255,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return originalUnserializeState.call(this, values);
         },
 
-        showCustomLayerForm: function (buttons, fieldValues) {
+        showCustomLayerForm: function(buttons, fieldValues) {
             if (this._customLayerWindow || this._configWindowVisible) {
                 return;
             }
@@ -310,10 +310,10 @@ function enableConfig(control, {layers, customLayersOrder}) {
                     };
                     buttons[callbackN].callback(fieldValues);
                 },
-                isWMS: function () {
-                    return 'wms' === this.type();
+                isWMS: function() {
+                    return this.type() === 'wms';
                 },
-                testWMS: function () {
+                testWMS: function() {
                     const url = `${dialogModel.url().split('?')[0]}?request=GetCapabilities&service=WMS`;
                     fetch(url)
                         .then((response) => {
@@ -334,10 +334,9 @@ function enableConfig(control, {layers, customLayersOrder}) {
                                         dialogModel.availableWmsData.formats.push(format);
                                     }
                                 }
-                                console.log(dialogModel.availableWmsData.formats);
                                 const layerElements = data.getElementsByTagName('Layer');
                                 for (let layerElement of layerElements) {
-                                    if ('1' === layerElement.getAttribute('queryable')) {
+                                    if (layerElement.getAttribute('queryable') === '1') {
                                         const name = layerElement.getElementsByTagName('Name')[0].textContent,
                                             title = ''
                                                 .concat(
@@ -362,13 +361,13 @@ function enableConfig(control, {layers, customLayersOrder}) {
                             dialogModel.availableWmsData.received(false);
                         });
                 },
-                wmsSetFormat: function () {
+                wmsSetFormat: function() {
                     const selectedFormat = dialogModel.availableWmsData.selectedFormat();
                     if (selectedFormat) {
                         dialogModel.wmsFormat(selectedFormat);
                     }
                 },
-                wmsAppendLayer: function () {
+                wmsAppendLayer: function() {
                     const selectedLayer = dialogModel.availableWmsData.selectedLayer();
                     if (selectedLayer) {
                         let currentLayers = dialogModel.wmsLayers();
@@ -436,7 +435,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             ko.applyBindings(dialogModel, form);
         },
 
-        _addItem: function (obj) {
+        _addItem: function(obj) {
             var label = originalAddItem.call(this, obj);
             if (obj.layer.__customLayer) {
                 const editButton = L.DomUtil.create('div', 'custom-layer-edit-button icon-edit', label.children[0]);
@@ -452,9 +451,9 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return label;
         },
 
-        serializeCustomLayer: function (fieldValues) {
+        serializeCustomLayer: function(fieldValues) {
             let s = JSON.stringify(fieldValues);
-            s = s.replace(/[\u007f-\uffff]/gu, function (c) {
+            s = s.replace(/[\u007f-\uffff]/gu, function(c) {
                 return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4);
             });
 
@@ -465,7 +464,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return '-cs' + encodeUrlSafeBase64(s);
         },
 
-        customLayerExists: function (fieldValues, ignoreLayer) {
+        customLayerExists: function(fieldValues, ignoreLayer) {
             const serialized = this.serializeCustomLayer(fieldValues);
             for (let layer of this._customLayers()) {
                 if (layer !== ignoreLayer && layer.serialized === serialized) {
@@ -475,7 +474,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return false;
         },
 
-        checkCustomLayerValues: function (fieldValues) {
+        checkCustomLayerValues: function(fieldValues) {
             if (!fieldValues.url) {
                 return {error: 'Url is empty'};
             }
@@ -485,7 +484,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return {};
         },
 
-        onCustomLayerAddClicked: function (fieldValues) {
+        onCustomLayerAddClicked: function(fieldValues) {
             const error = this.checkCustomLayerValues(fieldValues).error;
             if (error) {
                 notify(error);
@@ -510,7 +509,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this.updateEnabledLayers();
         },
 
-        createCustomLayer: function (fieldValues) {
+        createCustomLayer: function(fieldValues) {
             const serialized = this.serializeCustomLayer(fieldValues);
             let tileLayer;
             // Check if the layer type is WMS
@@ -519,7 +518,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
                 const wmsOptions = {
                     isOverlay: fieldValues.isOverlay,
                     maxNativeZoom: fieldValues.maxZoom,
-                    // maxZoom: L.default.maxZoom, // Assuming L.default.maxZoom is defined somewhere as in your original snippet c.default.maxZoom
+                    // maxZoom: L.default.maxZoom,
                     layers: fieldValues.wmsLayers,
                     format: fieldValues.wmsFormat,
                     transparent: fieldValues.wmsTransparent,
@@ -527,7 +526,9 @@ function enableConfig(control, {layers, customLayersOrder}) {
 
                 // Clean up undefined or empty options
                 Object.keys(wmsOptions).forEach((key) => {
-                    if (wmsOptions[key] === '') delete wmsOptions[key];
+                    if (wmsOptions[key] === '') {
+                        delete wmsOptions[key];
+                    }
                 });
 
                 tileLayer = L.tileLayer.wms(fieldValues.url.split('?')[0], wmsOptions);
@@ -563,11 +564,11 @@ function enableConfig(control, {layers, customLayersOrder}) {
             return customLayer;
         },
 
-        onCustomLayerCancelClicked: function () {
+        onCustomLayerCancelClicked: function() {
             this.hideCustomLayerForm();
         },
 
-        hideCustomLayerForm: function () {
+        hideCustomLayerForm: function() {
             if (!this._customLayerWindow) {
                 return;
             }
@@ -575,7 +576,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this._customLayerWindow = null;
         },
 
-        onCustomLayerEditClicked: function (layer, e) {
+        onCustomLayerEditClicked: function(layer, e) {
             L.DomEvent.stop(e);
             this.showCustomLayerForm(
                 [
@@ -590,7 +591,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
             );
         },
 
-        onCustomLayerChangeClicked: function (layer, newFieldValues) {
+        onCustomLayerChangeClicked: function(layer, newFieldValues) {
             const error = this.checkCustomLayerValues(newFieldValues).error;
             if (error) {
                 notify(error);
@@ -626,14 +627,14 @@ function enableConfig(control, {layers, customLayersOrder}) {
             this.hideCustomLayerForm();
         },
 
-        onCustomLayerDeletelClicked: function (layer) {
+        onCustomLayerDeletelClicked: function(layer) {
             this._map.removeLayer(layer.layer);
             this._customLayers.remove(layer);
             this.updateEnabledLayers();
             this.hideCustomLayerForm();
         },
 
-        loadCustomLayerFromString: function (s) {
+        loadCustomLayerFromString: function(s) {
             let fieldValues;
             const m = s.match(/^-cs(.+)$/u);
             if (m) {
