@@ -5,3 +5,7 @@
 *:focus {
   outline: 0;
 }
+
+.button.button-right {
+  float: right;
+}
