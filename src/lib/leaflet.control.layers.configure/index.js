@@ -758,8 +758,8 @@ function enableConfig(control, {layers, customLayersOrder}) {
 
             onZoomToLayerClicked: function(obj, e) {
                 L.DomEvent.stop(e);
-                if (obj.layer?.options?.boundingBox){
-                    this._map.fitBounds(obj.layer.options.boundingBox);
+                if (obj.layer?.options?.bounds) {
+                    this._map.fitBounds(obj.layer.options.bounds);
                 }
             },
 
