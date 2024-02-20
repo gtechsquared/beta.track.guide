@@ -169,6 +169,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             attribution:
                                 '<a href="https://www.linz.govt.nz/copyright">' +
                                 'Toitū Te Whenua Land Information New Zealand</a>',
+                            boundingBox: [[-47.5, 166.5], [-34, 179.5]]
                         }
                     )
                 },
