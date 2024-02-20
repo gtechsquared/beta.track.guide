@@ -23,6 +23,12 @@ L.Control.BetterScale = L.Control.extend({
         this.ScaleContainer = i;
         t.on(n.updateWhenIdle ? 'moveend' : 'move', this._update, this);
         t.whenReady(this._update, this);
+        // Add click event listener to toggle between metric and imperial
+        i.addEventListener('click', () => {
+            this.options.metric = !this.options.metric;
+            this.options.imperial = !this.options.imperial;
+            this._update();
+        });
         return i;
     },
     onRemove(t) {
@@ -48,11 +54,18 @@ L.Control.BetterScale = L.Control.extend({
         this._updateScales(s, a);
     },
     _updateScales(t, e) {
-        if (t.metric && e) {
-            this._updateMetric(e);
-        }
-        if (t.imperial && e) {
-            this._updateImperial(e);
+        // if (t.metric && e) {
+        //     this._updateMetric(e);
+        // }
+        // if (t.imperial && e) {
+        //     this._updateImperial(e);
+        // }
+        if (e) {
+            if (t.metric) {
+                this._updateMetric(e);
+            } else if (t.imperial) {
+                this._updateImperial(e);
+            }
         }
     },
     _updateMetric(t) {
