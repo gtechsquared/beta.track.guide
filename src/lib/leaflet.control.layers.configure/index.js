@@ -724,6 +724,14 @@ function enableConfig(control, {layers, customLayersOrder}) {
                         this.onLayerSideClicked(obj, editButton, e)
                     );
                 }
+                if (obj.layer.options.isOverlay) {
+                    const zoomButton = L.DomUtil.create('div', 'layer-extra-button icon-zoom', label.children[0]);
+                    zoomButton.title = 'Zoom to layer';
+
+                    L.DomEvent.on(zoomButton, 'click', (e) =>
+                        this.onZoomToLayerClicked(obj, e)
+                    );
+                }
                 if (obj.layer.options.isOverlay && !obj.layer.options.noOpacity) {
                     const settingsButton = L.DomUtil.create(
                         'div',
@@ -746,6 +754,13 @@ function enableConfig(control, {layers, customLayersOrder}) {
                     }, 0);
                 }
                 return label;
+            },
+
+            onZoomToLayerClicked: function(obj, e) {
+                L.DomEvent.stop(e);
+                if (obj.layer?.options?.boundingBox){
+                    this._map.fitBounds(obj.layer.options.boundingBox);
+                }
             },
 
             serializeCustomLayer: function(fieldValues) {
