@@ -24,6 +24,7 @@ module.exports = [
     'src/lib/leaflet.polyline-measure/index.js',
     'src/lib/leaflet.control.coordinates/index.js',
     'src/lib/leaflet.control.coordinates/formats.js',
+    'src/lib/leaflet.control.betterscale/index.js',
     'src/lib/tiled-data-loader/index.js',
     // 'src/lib/anyElementResizeEvent/index.js',
     'src/lib/leaflet.layer.google/index.js',
