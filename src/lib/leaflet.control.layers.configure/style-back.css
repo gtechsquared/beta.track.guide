@@ -15,83 +15,12 @@
     margin-right: 4px;
 }
 
-.button.button-text {
-    width: auto;
-    padding: 0 4px;
-}
-
-.button.button-right {
-    float: right;
-}
-
-.button-active {
-    background-color: #228dff !important;
-    border: solid 1px #228dff !important;
-    color: #fff;
-}
-
-.button-alt {
-    background-color: #eee !important;
-}
-
-.button-active-alt {
-    height: 16px !important;
-    width: 16px !important;
-    border: solid 2px #228dff !important;
-    background-color: #fff !important;
-}
-
-.button-active:hover {
-    background-color: #4aa1ff !important;
-}
-
-.button:hover {
-    background-color: #f0f0f0;
-}
-
 .icon-settings {
     background-image: url("settings.svg");
 }
 
 .icon-edit {
     background-image: url("pencil.svg");
-}
-
-.icon-opacity {
-    background-image: url("opacity.svg");
-}
-
-.icon-split {
-    background-image: url("flip-horizontal.svg");
-}
-
-.icon-magnify {
-    background-image: url("magnify.svg");
-}
-
-.icon-layer-search {
-    background-image: url("eye-circle-outline.svg");
-}
-
-.icon-left {
-    background-image: url("arrow-left.svg");
-}
-
-.icon-left-right {
-    background-image: url("arrow-left-right.svg");
-}
-
-.icon-right {
-    background-image: url("arrow-right.svg");
-}
-
-.icon-background {
-    background-image: url("flip-to-back.svg");
-}
-
-.layer-opacity-value {
-    font-size: 0.75em;
-    color: #666;
 }
 
 .leaflet-control-layers .button-config:hover {
@@ -155,14 +84,6 @@
     color: #333;
 }
 
-.button.button-sm {
-    height: 22px;
-    margin-right: 2px;
-    padding: 0 0.5em;
-    line-height: 20px;
-    font-size: 12px;
-}
-
 .leaflet-layers-select-window .button:hover {
     background-color: #f4f4f4;
 }
@@ -178,23 +99,6 @@
 
 .leaflet-layers-select-window .section-header a {
     color: #666;
-}
-
-.leaflet-layers-select-window .section-header-toggle label {
-    color: #222;
-    padding: 2px 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-
-.leaflet-layers-select-window .section-header-toggle:hover label {
-    color: #444;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 .custom-layers-window {
@@ -241,36 +145,6 @@
     cursor: pointer;
 }
 
-.layer-extra-button {
-    display: inline-block;
-    vertical-align: bottom;
-    margin-left: 2px;
-
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: white;
-
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-}
-
-.layer-extra-button-text {
-    width: auto;
-    padding-left: 14px;
-    padding-right: 2px;
-    background-position: left;
-    line-height: 14px;
-}
-
-.layer-extra-button:hover {
-    background-color: #d8d8d8;
-}
-
 .custom-layers-window .doc-link {
     color: #777;
 }
@@ -292,9 +166,4 @@
 .custom-layers-window .hint {
     font-size: 10px;
     color: #777;
-}
-
-.custom-layers-window .error {
-    font-size: 10px;
-    color: #B00020;
 }

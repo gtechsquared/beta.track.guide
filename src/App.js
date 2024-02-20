@@ -7,6 +7,7 @@ import '~/lib/leaflet.control.printPages/control';
 import '~/lib/leaflet.control.caption';
 import config from './config';
 import '~/lib/leaflet.control.coordinates';
+import '~/lib/leaflet.control.betterscale';
 import enableLayersControlHotKeys from '~/lib/leaflet.control.layers.hotkeys';
 import '~/lib/leaflet.hashState/Leaflet.Map';
 import '~/lib/leaflet.hashState/Leaflet.Control.Layers';
@@ -109,9 +110,10 @@ function setUp() { // eslint-disable-line complexity
         .enableHashState('q');
     map.getPlacemarkHashStateInterface().enableHashState('r');
 
-    new L.Control.Scale({
+    new L.Control.BetterScale({
+        metric: true,
         imperial: false,
-        position: 'topleft',
+        position: 'bottomleft',
         stackHorizontally: true
     }).addTo(map);
 

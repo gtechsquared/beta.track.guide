@@ -2,6 +2,7 @@ import _UTM from './utm';
 import _UTMREF from './utmref';
 import _QTH from './qth';
 import _NAC from './nac';
+import _NZTM from './nztm';
 
 function truncToFixed(x, precision) {
     let s = x.toString();
@@ -82,8 +83,7 @@ function formatLatLng(latlng, format) {
                 codex = `X ${codex['x']}, Y ${codex['y']}`;
                 break;
             case 'NZTM':
-                codex = _NAC.fromLatLng(latlng);
-                codex = `X ${codex['x']}, Y ${codex['y']}`;
+                codex = _NZTM.fromLatLng(latlng);
                 break;
             default:
         }
