@@ -7,6 +7,7 @@ const config = {
         <a href="mailto:hello@track.guide" target="_self">hello@track.guide</a>`,
     defaultLocation: [-27.53476, 153.05225],
     defaultZoom: 8,
+    maxZoom: 18,
     googleApiUrl: `https://maps.googleapis.com/maps/api/js?v=3&key=${secrets.google}`,
     westraDataBaseUrl: 'https://nakarte.me/westraPasses/',
     CORSProxyUrl: 'https://proxy.nakarte.me/',
