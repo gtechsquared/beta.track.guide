@@ -5,7 +5,7 @@ name: Node.js s3 sync
 
 on:
   push:
-    branches: [master]
+    branches: [master, production]
 
 jobs:
   build-and-deploy-s3:
@@ -45,12 +45,20 @@ jobs:
         env:
           CI: true   
       - run: NODE_ENV=production yarn run build --if-present
+      - name: Set S3 Bucket
+        id: set_s3_bucket
+        run: |
+          if [[ "${{ steps.extract_branch.outputs.branch }}" == "production" ]]; then
+            echo "::set-output name=bucket::www.track.guide"
+          else
+            echo "::set-output name=bucket::beta.track.guide"
+          fi
       - name: s3 sync
         uses: yalamber/s3-sync-action@master
         with:
           args: --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: 'beta.track.guide'
+          AWS_S3_BUCKET: ${{ steps.set_s3_bucket.outputs.bucket }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_REGION: 'ap-southeast-2'
