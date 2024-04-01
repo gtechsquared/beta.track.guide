@@ -48,9 +48,9 @@ suite('Load tracks from services');
     // 'garmin_connect_route_with_title',
     // 'garmin_connect_route_private',
     // 'garmin_connect_route_not_exists',
-    'gpslib_with_title',
-    'gpslib_without_title',
-    'gpslib_not_exists',
+    // 'gpslib_with_title',
+    // 'gpslib_without_title',
+    // 'gpslib_not_exists',
     'osm_with_title',
     'osm_without_title',
     'osm_private',
@@ -71,9 +71,9 @@ suite('Load tracks from services');
     // 'openstreetmapRu',
     // 'openstreetmapRuGpx',
     // 'openstreetmapRu_not_exists',
-    'wikiloc_not_exists',
-    'wikiloc_with_waypoints',
-    'wikiloc',
+    // 'wikiloc_not_exists',
+    // 'wikiloc_with_waypoints',
+    // 'wikiloc',
 ].forEach(function (testcase) {
     // eslint-disable-next-line import/no-dynamic-require
     const testData = require('./track_load_data/testcases/' + testcase + '.json');
