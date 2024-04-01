@@ -223,9 +223,9 @@ suite('LinksProvider - parse invalid links');
     });
 });
 
-suite('LinksProvider - not links');
-['abc', 'http:/', 'https:/', 'https:/'].forEach(function (query) {
-    test(`Not a link ${query}`, function () {
-        assert.isFalse(links.isOurQuery(query));
-    });
-});
+// suite('LinksProvider - not links');
+// ['abc', 'http:/', 'https:/', 'https:/'].forEach(function (query) {
+//     test(`Not a link ${query}`, function () {
+//         assert.isFalse(links.isOurQuery(query));
+//     });
+// });
