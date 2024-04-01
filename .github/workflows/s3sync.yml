@@ -49,10 +49,10 @@ jobs:
         id: set_s3_bucket
         run: |
           if [[ "${{ steps.extract_branch.outputs.branch }}" == "production" ]]; then
-            echo "bucket_name=www.track.guide" >> "$GITHUB_ENV"
+            echo "BUCKET_NAME=www.track.guide" >> "$GITHUB_OUTPUT"
             #echo "::set-output name=bucket::www.track.guide"
           else
-            echo "bucket_name=beta.track.guide" >> "$GITHUB_ENV"
+            echo "BUCKET_NAME=beta.track.guide" >> "$GITHUB_OUTPUT"
             #echo "::set-output name=bucket::beta.track.guide"
           fi
       - name: s3 sync
@@ -60,7 +60,7 @@ jobs:
         with:
           args: --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: $bucket_name
+          AWS_S3_BUCKET: ${{ steps.set_s3_bucket.outputs.BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_REGION: 'ap-southeast-2'
