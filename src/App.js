@@ -36,6 +36,7 @@ import safeLocalStorage from '~/lib/safe-localstorage';
 import {ExternalMaps} from '~/lib/leaflet.control.external-maps';
 import {SearchControl} from '~/lib/leaflet.control.search';
 import '~/lib/leaflet.placemark';
+import '~/lib/leaflet.control.openroute';
 
 const locationErrorMessage = {
     0: 'Your browser does not support geolocation.',
@@ -47,7 +48,8 @@ const minimizeStateAuto = 0;
 const minimizeStateMinimized = 1;
 const minimizeStateExpanded = 2;
 
-function setUp() { // eslint-disable-line complexity
+function setUp() {
+    // eslint-disable-line complexity
     const startInfo = {
         href: window.location.href,
         localStorageKeys: Object.keys(safeLocalStorage),
@@ -71,25 +73,23 @@ function setUp() { // eslint-disable-line complexity
     };
 
     const map = new MapWithSidebars('map', {
-            zoomControl: false,
-            fadeAnimation: false,
-            attributionControl: false,
-            inertiaMaxSpeed: 1500,
-            worldCopyJump: true,
-            maxZoom: 18
-        }
-    );
+        zoomControl: false,
+        fadeAnimation: false,
+        attributionControl: false,
+        inertiaMaxSpeed: 1500,
+        worldCopyJump: true,
+        maxZoom: 18,
+    });
 
     const tracklist = new L.Control.TrackList({
-        keysToExcludeOnCopyLink: ['q', 'r']
+        keysToExcludeOnCopyLink: ['q', 'r'],
     });
 
     /* controls top-left corner */
 
     new L.Control.Caption(config.caption, {
-            position: 'topleft'
-        }
-    ).addTo(map);
+        position: 'topleft',
+    }).addTo(map);
 
     new ZoomDisplay().addTo(map);
 
@@ -105,25 +105,21 @@ function setUp() { // eslint-disable-line complexity
         searchOptions.maxMapHeightToMinimize = 0;
         searchOptions.maxMapWidthToMinimize = 0;
     }
-    const searchControl = new SearchControl(searchOptions)
-        .addTo(map)
-        .enableHashState('q');
+    const searchControl = new SearchControl(searchOptions).addTo(map).enableHashState('q');
     map.getPlacemarkHashStateInterface().enableHashState('r');
 
     new L.Control.BetterScale({
         metric: true,
         imperial: false,
         position: 'bottomleft',
-        stackHorizontally: true
+        stackHorizontally: true,
     }).addTo(map);
 
     new ExternalMaps({position: 'topleft'}).addTo(map);
 
     new L.Control.TrackList.Ruler(tracklist).addTo(map);
 
-     const panoramas = new L.Control.Panoramas()
-        .addTo(map)
-        .enableHashState('n2');
+    const panoramas = new L.Control.Panoramas().addTo(map).enableHashState('n2');
     L.Control.Panoramas.hashStateUpgrader(panoramas).enableHashState('n');
 
     new L.Control.Coordinates({position: 'topleft'}).addTo(map);
@@ -132,21 +128,22 @@ function setUp() { // eslint-disable-line complexity
 
     const locateControl = new LocateControl({
         position: 'topleft',
-        showError: function({code, message}) {
+        showError: function ({code, message}) {
             let customMessage = locationErrorMessage[code];
             if (!customMessage) {
                 customMessage = `Geolocation error: ${message}`;
             }
             notify(customMessage);
-        }
+        },
     }).addTo(map);
     let {valid: validPositionInHash} = map.validateState(hashState.getState('m'));
     map.enableHashState('m', [config.defaultZoom, ...config.defaultLocation]);
 
+    const openrouteControl = new L.Control.OpenRoute({position: 'topleft'}).addTo(map);
+
     /* controls top-right corner */
 
-    const layersControl = L.control.layers(null, null, {collapsed: false})
-        .addTo(map);
+    const layersControl = L.control.layers(null, null, {collapsed: false}).addTo(map);
     enableLayersControlHotKeys(layersControl);
     enableLayersControlAdaptiveHeight(layersControl);
     enableLayersMinimize(layersControl);
@@ -159,7 +156,7 @@ function setUp() { // eslint-disable-line complexity
         position: 'bottomleft',
         prefix: false,
     });
-    map.on('resize', function() {
+    map.on('resize', function () {
         if (map.getSize().y > 567) {
             map.addControl(attribution);
             // Hack to keep control at the bottom of the map
@@ -174,9 +171,7 @@ function setUp() { // eslint-disable-line complexity
         map.addControl(attribution);
     }
 
-    const printControl = new L.Control.PrintPages({position: 'bottomleft'})
-        .addTo(map)
-        .enableHashState('p');
+    const printControl = new L.Control.PrintPages({position: 'bottomleft'}).addTo(map).enableHashState('p');
     if (
         minimizeControls.print === minimizeStateMinimized ||
         (minimizeControls.print === minimizeStateAuto && !printControl.hasPages())
@@ -184,9 +179,7 @@ function setUp() { // eslint-disable-line complexity
         printControl.setMinimized();
     }
 
-    const jnxControl = new L.Control.JNX(layersControl, {position: 'bottomleft'})
-        .addTo(map)
-        .enableHashState('j');
+    const jnxControl = new L.Control.JNX(layersControl, {position: 'bottomleft'}).addTo(map).enableHashState('j');
 
     /* controls bottom-right corner */
 
@@ -243,7 +236,7 @@ function setUp() { // eslint-disable-line complexity
     /* adaptive layout */
 
     if (
-        minimizeControls.layers === minimizeStateAuto && L.Browser.mobile ||
+        (minimizeControls.layers === minimizeStateAuto && L.Browser.mobile) ||
         minimizeControls.layers === minimizeStateMinimized
     ) {
         layersControl.setMinimized();
@@ -254,7 +247,7 @@ function setUp() { // eslint-disable-line complexity
     }
 
     if (
-        minimizeControls.tracks === minimizeStateAuto && L.Browser.mobile && !tracklist.hasTracks() ||
+        (minimizeControls.tracks === minimizeStateAuto && L.Browser.mobile && !tracklist.hasTracks()) ||
         minimizeControls.tracks === minimizeStateMinimized
     ) {
         tracklist.setMinimized();
@@ -280,15 +273,24 @@ function setUp() { // eslint-disable-line complexity
         }
         logging.logEvent('saveTracksToStorage done', {
             time: Date.now() - t,
-            localStorageKeys
+            localStorageKeys,
         });
     });
 
-    /* track list and azimuth measure interaction */
+    /* track list, openroute and azimuth measure interaction */
 
-    tracklist.on('startedit', () => azimuthControl.disableControl());
+    tracklist.on('startedit', () => {
+        azimuthControl.disableControl();
+        openrouteControl.disableControl();
+    });
     tracklist.on('elevation-shown', () => azimuthControl.hideProfile());
+    openrouteControl.on('enabled', () => {
+        console.log('here');
+        // azimuthControl.disableControl();
+        // tracklist.stopEditLine();
+    });
     azimuthControl.on('enabled', () => {
+        openrouteControl.disableControl();
         tracklist.stopEditLine();
     });
     azimuthControl.on('elevation-shown', () => tracklist.hideElevationProfile());
@@ -340,7 +342,7 @@ function setUp() { // eslint-disable-line complexity
 
     L.DomEvent.on(document, 'mousemove click touchend', L.Util.throttle(logUsedMaps, 30000));
 
-    printControl.on('mapRenderEnd', function(e) {
+    printControl.on('mapRenderEnd', function (e) {
         logging.logEvent('mapRenderEnd', {
             eventId: e.eventId,
             success: e.success,
@@ -348,14 +350,14 @@ function setUp() { // eslint-disable-line complexity
         });
     });
 
-    printControl.on('mapRenderStart', function(e) {
+    printControl.on('mapRenderStart', function (e) {
         const layers = [];
         map.eachLayer((layer) => {
             const layerInfo = getLayerLoggingInfo(layer);
             if (layer.options?.print && layerInfo) {
                 layers.push({
                     ...getLayerLoggingInfo(layer),
-                    scaleDependent: layer.options.scaleDependent
+                    scaleDependent: layer.options.scaleDependent,
                 });
             }
         });
@@ -366,11 +368,11 @@ function setUp() { // eslint-disable-line complexity
             resolution: e.resolution,
             pages: e.pages.map((page) => getLatLngBoundsLoggingInfo(page.latLngBounds)),
             zooms: e.zooms,
-            layers
+            layers,
         });
     });
 
-    jnxControl.on('tileExportStart', function(e) {
+    jnxControl.on('tileExportStart', function (e) {
         logging.logEvent('tileExportStart', {
             eventId: e.eventId,
             layer: getLayerLoggingInfo(e.layer),
@@ -379,7 +381,7 @@ function setUp() { // eslint-disable-line complexity
         });
     });
 
-    jnxControl.on('tileExportEnd', function(e) {
+    jnxControl.on('tileExportEnd', function (e) {
         logging.logEvent('tileExportEnd', {
             eventId: e.eventId,
             success: e.success,
@@ -387,7 +389,7 @@ function setUp() { // eslint-disable-line complexity
         });
     });
 
-    searchControl.on('resultreceived', function(e) {
+    searchControl.on('resultreceived', function (e) {
         logging.logEvent('SearchProviderSelected', {
             provider: e.provider,
             query: e.query,
