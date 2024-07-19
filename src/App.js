@@ -47,7 +47,7 @@ const locationErrorMessage = {
 const minimizeStateAuto = 0;
 const minimizeStateMinimized = 1;
 const minimizeStateExpanded = 2;
-
+// eslint-disable-next-line complexity
 function setUp() {
     // eslint-disable-line complexity
     const startInfo = {
@@ -128,7 +128,7 @@ function setUp() {
 
     const locateControl = new LocateControl({
         position: 'topleft',
-        showError: function ({code, message}) {
+        showError: function({code, message}) {
             let customMessage = locationErrorMessage[code];
             if (!customMessage) {
                 customMessage = `Geolocation error: ${message}`;
@@ -156,7 +156,7 @@ function setUp() {
         position: 'bottomleft',
         prefix: false,
     });
-    map.on('resize', function () {
+    map.on('resize', function() {
         if (map.getSize().y > 567) {
             map.addControl(attribution);
             // Hack to keep control at the bottom of the map
@@ -284,10 +284,14 @@ function setUp() {
         openrouteControl.disableControl();
     });
     tracklist.on('elevation-shown', () => azimuthControl.hideProfile());
-    openrouteControl.on('enabled', () => {
-        console.log('here');
-        // azimuthControl.disableControl();
-        // tracklist.stopEditLine();
+
+    openrouteControl.on('saveTrack', (e) => {
+        const geoData = {
+            name: 'Direction Imported Track',
+            points: [],
+            tracks: [e.line.getLatLngs()],
+        };
+        tracklist.addTrack(geoData);
     });
     azimuthControl.on('enabled', () => {
         openrouteControl.disableControl();
@@ -342,7 +346,7 @@ function setUp() {
 
     L.DomEvent.on(document, 'mousemove click touchend', L.Util.throttle(logUsedMaps, 30000));
 
-    printControl.on('mapRenderEnd', function (e) {
+    printControl.on('mapRenderEnd', function(e) {
         logging.logEvent('mapRenderEnd', {
             eventId: e.eventId,
             success: e.success,
@@ -350,7 +354,7 @@ function setUp() {
         });
     });
 
-    printControl.on('mapRenderStart', function (e) {
+    printControl.on('mapRenderStart', function(e) {
         const layers = [];
         map.eachLayer((layer) => {
             const layerInfo = getLayerLoggingInfo(layer);
@@ -372,7 +376,7 @@ function setUp() {
         });
     });
 
-    jnxControl.on('tileExportStart', function (e) {
+    jnxControl.on('tileExportStart', function(e) {
         logging.logEvent('tileExportStart', {
             eventId: e.eventId,
             layer: getLayerLoggingInfo(e.layer),
@@ -381,7 +385,7 @@ function setUp() {
         });
     });
 
-    jnxControl.on('tileExportEnd', function (e) {
+    jnxControl.on('tileExportEnd', function(e) {
         logging.logEvent('tileExportEnd', {
             eventId: e.eventId,
             success: e.success,
@@ -389,7 +393,7 @@ function setUp() {
         });
     });
 
-    searchControl.on('resultreceived', function (e) {
+    searchControl.on('resultreceived', function(e) {
         logging.logEvent('SearchProviderSelected', {
             provider: e.provider,
             query: e.query,

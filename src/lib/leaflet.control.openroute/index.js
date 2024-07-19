@@ -1,14 +1,15 @@
+import mbPolyline from '@mapbox/polyline';
 import ko from 'knockout';
 import L from 'leaflet';
-import Contextmenu from '~/lib/contextmenu';
 import Openrouteservice from 'openrouteservice-js';
-import mbPolyline from '@mapbox/polyline';
+
 import config from '~/config';
+import Contextmenu from '~/lib/contextmenu';
 import {makeButtonWithBar} from '~/lib/leaflet.control.commons';
+
 import layout from './control.html';
-import iconPointer from './pointer.svg';
 import iconPointerStart from './pointer-start.svg';
-// import iconPointerEnd from './pointer-end.svg';
+import iconPointer from './pointer.svg';
 import '~/lib/controls-styles/controls-styles.css';
 import './style.css';
 
@@ -19,7 +20,7 @@ L.Control.OpenRoute = L.Control.extend({
 
     includes: L.Mixin.Events,
 
-    initialize: function (options) {
+    initialize: function(options) {
         L.Control.prototype.initialize.call(this, options);
         this.orsDirections = new Openrouteservice.Directions({api_key: config.openRouteKey});
         this.points = {
@@ -40,8 +41,7 @@ L.Control.OpenRoute = L.Control.extend({
                 rotationOrigin: 'center center',
             })
                 .on('drag', this.onMarkerDrag, this)
-                .on('click', L.DomEvent.stopPropagation)
-                .on('dragend', this.onMarkerDragEnd, this),
+                .on('click', L.DomEvent.stopPropagation),
             end: L.marker([0, 0], {
                 icon: iconEnd,
                 draggable: true,
@@ -50,11 +50,10 @@ L.Control.OpenRoute = L.Control.extend({
             })
                 .on('drag', this.onMarkerDrag, this)
                 .on('click', L.DomEvent.stopPropagation)
-                .on('dragend', this.onMarkerDragEnd, this),
         };
     },
 
-    onAdd: function (map) {
+    onAdd: function(map) {
         this._map = map;
         const {container, link, barContainer} = makeButtonWithBar(
             'leaflet-control-openroute',
@@ -69,7 +68,7 @@ L.Control.OpenRoute = L.Control.extend({
         return container;
     },
 
-    onClick: function () {
+    onClick: function() {
         if (this.isEnabled()) {
             this.disableControl();
         } else {
@@ -77,17 +76,12 @@ L.Control.OpenRoute = L.Control.extend({
         }
     },
 
-    onMarkerDrag: function (e) {
+    onMarkerDrag: function(e) {
         const marker = e.target;
         this.setPoints({[marker.options.which]: marker.getLatLng()});
     },
 
-    onMarkerDragEnd: function () {
-        // TODO: call openroute api and show direction
-        // console.log('call open route');
-    },
-
-    enableControl: function () {
+    enableControl: function() {
         L.DomUtil.addClass(this._container, 'active');
         L.DomUtil.addClass(this._container, 'highlight');
         L.DomUtil.addClass(this._map._container, 'openroute-control-active');
@@ -97,7 +91,7 @@ L.Control.OpenRoute = L.Control.extend({
         this._enabled = true;
     },
 
-    disableControl: function () {
+    disableControl: function() {
         L.DomUtil.removeClass(this._container, 'active');
         L.DomUtil.removeClass(this._container, 'highlight');
         L.DomUtil.removeClass(this._map._container, 'openroute-control-active');
@@ -106,11 +100,11 @@ L.Control.OpenRoute = L.Control.extend({
         this._enabled = false;
     },
 
-    isEnabled: function () {
+    isEnabled: function() {
         return Boolean(this._enabled);
     },
 
-    setPoints: async function (points) {
+    setPoints: async function(points) {
         Object.assign(this.points, points);
         points = this.points;
         if (points.start && !points.end) {
@@ -128,7 +122,7 @@ L.Control.OpenRoute = L.Control.extend({
         this.updateValuesDisplay();
     },
 
-    onMapClick: function (e) {
+    onMapClick: function(e) {
         if (!this.points.start && !this.points.end) {
             this.setPoints({start: e.latlng});
         } else if (this.points.start && !this.points.end) {
@@ -138,7 +132,7 @@ L.Control.OpenRoute = L.Control.extend({
         }
     },
 
-    updateValuesDisplay: async function () {
+    updateValuesDisplay: async function() {
         if (this.points.start && this.points.end) {
             try {
                 const points = this.points;
@@ -156,41 +150,29 @@ L.Control.OpenRoute = L.Control.extend({
                 // Add your own result handling here
                 const polylineLayer = L.polyline(coordinates, {color: 'blue'}).addTo(this._map);
                 polylineLayer.on('contextmenu', (e) => {
-                    console.log(e);
-                    this.onDirectionRightClickShowMenu(e);
+                    this.onDirectionRightClickShowMenu(e, polylineLayer, points);
                 });
                 this._map.fitBounds(polylineLayer.getBounds(), {
                     padding: [10, 30],
                 });
             } catch (e) {
-                console.log(e);
                 alert('Unable to find direction');
             }
-        } else {
-            // TODO: remove polyline
         }
     },
-    onDirectionRightClickShowMenu: function (e) {
-        var menu = new Contextmenu([
-            {
-                text: 'Download GPX File',
-                callback: () => {
-                    this.downloadGPX(e);
-                },
-            },
+
+    onDirectionRightClickShowMenu: function(e, polylineLayer, points) {
+        const menu = new Contextmenu([
             {
                 text: 'New track from direction',
                 callback: () => {
-                    this.createNewTrackFromDirection(e);
+                    this.createNewTrackFromDirection(e, polylineLayer, points);
                 },
             },
         ]);
         menu.show(e);
     },
-    createNewTrackFromDirection: function (e) {
-        console.log(e);
-    },
-    downloadGPX: function (e) {
-        console.log(e);
+    createNewTrackFromDirection: function(e, line, points) {
+        this.fire('saveTrack', {e, line, points});
     },
 });
