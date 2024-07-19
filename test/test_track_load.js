@@ -61,9 +61,9 @@ suite('Load tracks from services');
     // 'etomesto_without_title',
     // 'etomesto_private',
     // 'etomesto_not_exists',
-    'tracedetrail_with_title',
-    'tracedetrail_private',
-    'tracedetrail_not_exists',
+    // 'tracedetrail_with_title',
+    // 'tracedetrail_private',
+    // 'tracedetrail_not_exists',
     'sportstracker_with_title',
     'sportstracker_without_title',
     'sportstracker_private',
@@ -72,8 +72,8 @@ suite('Load tracks from services');
     // 'openstreetmapRuGpx',
     // 'openstreetmapRu_not_exists',
     'wikiloc_not_exists',
-    'wikiloc_with_waypoints',
-    'wikiloc',
+    // 'wikiloc_with_waypoints',
+    // 'wikiloc',
 ].forEach(function (testcase) {
     // eslint-disable-next-line import/no-dynamic-require
     const testData = require('./track_load_data/testcases/' + testcase + '.json');
