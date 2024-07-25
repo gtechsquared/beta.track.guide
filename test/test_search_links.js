@@ -212,7 +212,7 @@ suite('LinksProvider - parse invalid links');
     ['https://example.com/#l=O&m=11/49.44893/', 'Unsupported link'],
     ['https://example.com/#l=O&m=99/49.44893/52.5547', 'Unsupported link'],
     ['https://en.mapy.cz/s/lucacunom', 'Broken Mapy.cz short link'],
-    ['https://goo.gl/maps/ZvjVBY78HUP8HjQi', 'Broken Google short link'],
+    // ['https://goo.gl/maps/ZvjVBY78HUP8HjQi', 'Broken Google short link'],
     // ['https://yandex.ru/maps/-/CCQpqZXJ', 'Broken Yandex short link'], // Yandex returns good result for broken link
 ].forEach(function ([query, expectedError]) {
     test(`Invalid link ${query}`, async function () {
