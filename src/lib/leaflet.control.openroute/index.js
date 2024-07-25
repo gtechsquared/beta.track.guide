@@ -27,6 +27,7 @@ L.Control.OpenRoute = L.Control.extend({
             start: null,
             end: null,
         };
+        this.polylineLayer = null;
         const iconSingle = L.icon({iconUrl: iconPointer, iconSize: [30, 30]});
         const iconStart = L.icon({iconUrl: iconPointerStart, iconSize: [30, 30]});
         const iconEnd = L.icon({iconUrl: iconPointerStart, iconSize: [30, 30]});
@@ -49,7 +50,7 @@ L.Control.OpenRoute = L.Control.extend({
                 rotationOrigin: 'center center',
             })
                 .on('drag', this.onMarkerDrag, this)
-                .on('click', L.DomEvent.stopPropagation)
+                .on('click', L.DomEvent.stopPropagation),
         };
     },
 
@@ -82,6 +83,7 @@ L.Control.OpenRoute = L.Control.extend({
     },
 
     enableControl: function() {
+        L.DomUtil.addClass(this._map._container, 'leaflet-point-placing');
         L.DomUtil.addClass(this._container, 'active');
         L.DomUtil.addClass(this._container, 'highlight');
         L.DomUtil.addClass(this._map._container, 'openroute-control-active');
@@ -92,6 +94,7 @@ L.Control.OpenRoute = L.Control.extend({
     },
 
     disableControl: function() {
+        L.DomUtil.removeClass(this._map._container, 'leaflet-point-placing');
         L.DomUtil.removeClass(this._container, 'active');
         L.DomUtil.removeClass(this._container, 'highlight');
         L.DomUtil.removeClass(this._map._container, 'openroute-control-active');
@@ -148,15 +151,15 @@ L.Control.OpenRoute = L.Control.extend({
                 });
                 const coordinates = mbPolyline.decode(json.routes[0].geometry);
                 // Add your own result handling here
-                const polylineLayer = L.polyline(coordinates, {color: 'blue'}).addTo(this._map);
-                polylineLayer.on('contextmenu', (e) => {
-                    this.onDirectionRightClickShowMenu(e, polylineLayer, points);
+                this.polylineLayer = L.polyline(coordinates, {color: 'blue'}).addTo(this._map);
+                this.polylineLayer.on('contextmenu', (e) => {
+                    this.onDirectionRightClickShowMenu(e, this.polylineLayer, points);
                 });
-                this._map.fitBounds(polylineLayer.getBounds(), {
+                this._map.fitBounds(this.polylineLayer.getBounds(), {
                     padding: [10, 30],
                 });
             } catch (e) {
-                alert('Unable to find direction');
+                alert('We are unable to find direction');
             }
         }
     },
@@ -164,9 +167,15 @@ L.Control.OpenRoute = L.Control.extend({
     onDirectionRightClickShowMenu: function(e, polylineLayer, points) {
         const menu = new Contextmenu([
             {
-                text: 'New track from direction',
+                text: 'Add as Track',
                 callback: () => {
                     this.createNewTrackFromDirection(e, polylineLayer, points);
+                },
+            },
+            {
+                text: 'Delete Route',
+                callback: () => {
+                    this.deleteTrack(e, polylineLayer, points);
                 },
             },
         ]);
@@ -175,4 +184,10 @@ L.Control.OpenRoute = L.Control.extend({
     createNewTrackFromDirection: function(e, line, points) {
         this.fire('saveTrack', {e, line, points});
     },
+    deleteTrack: function() {
+        if (this.polylineLayer) {
+            // remove polyline layer
+            this.polylineLayer.remove();
+        }
+    }
 });
