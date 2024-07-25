@@ -287,7 +287,7 @@ function setUp() {
 
     openrouteControl.on('saveTrack', (e) => {
         const geoData = {
-            name: 'Direction Imported Track',
+            name: 'Imported Route',
             points: [],
             tracks: [e.line.getLatLngs()],
         };
