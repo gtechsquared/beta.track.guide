@@ -27,7 +27,6 @@ L.Control.OpenRoute = L.Control.extend({
             start: null,
             end: null,
         };
-        this.polylineLayer = null;
         const iconSingle = L.icon({iconUrl: iconPointer, iconSize: [30, 30]});
         const iconStart = L.icon({iconUrl: iconPointerStart, iconSize: [30, 30]});
         const iconEnd = L.icon({iconUrl: iconPointerStart, iconSize: [30, 30]});
@@ -151,15 +150,19 @@ L.Control.OpenRoute = L.Control.extend({
                 });
                 const coordinates = mbPolyline.decode(json.routes[0].geometry);
                 // Add your own result handling here
-                this.polylineLayer = L.polyline(coordinates, {color: 'blue'}).addTo(this._map);
-                this.polylineLayer.on('contextmenu', (e) => {
-                    this.onDirectionRightClickShowMenu(e, this.polylineLayer, points);
+                const newPolyLineLayer = L.polyline(coordinates, {color: 'blue'}).addTo(this._map);
+                newPolyLineLayer.on('contextmenu', (e) => {
+                    this.onDirectionRightClickShowMenu(e, newPolyLineLayer, points);
                 });
-                this._map.fitBounds(this.polylineLayer.getBounds(), {
+                this._map.fitBounds(newPolyLineLayer.getBounds(), {
                     padding: [10, 30],
                 });
             } catch (e) {
                 alert('We are unable to find direction');
+            } finally {
+                // TODO: remove points
+                this.markers.start.removeFrom(this._map);
+                this.markers.end.removeFrom(this._map);
             }
         }
     },
@@ -184,10 +187,10 @@ L.Control.OpenRoute = L.Control.extend({
     createNewTrackFromDirection: function(e, line, points) {
         this.fire('saveTrack', {e, line, points});
     },
-    deleteTrack: function() {
-        if (this.polylineLayer) {
+    deleteTrack: function(e, polylineLayer) {
+        if (polylineLayer) {
             // remove polyline layer
-            this.polylineLayer.remove();
+            polylineLayer.remove();
         }
     }
 });
