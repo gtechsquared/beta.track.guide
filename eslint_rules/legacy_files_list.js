@@ -117,6 +117,7 @@ module.exports = [
     'src/lib/magnetic-declination/index.js',
     'src/lib/leaflet.control.caption/index.js',
     'src/lib/leaflet.control.azimuth/index.js',
+    'src/lib/leaflet.control.openroute/index.js',
     'src/lib/leaflet.control.layers.minimize/index.js',
     'src/lib/stripBom/index.js',
     'src/lib/leaflet.control.layers.events/index.js',

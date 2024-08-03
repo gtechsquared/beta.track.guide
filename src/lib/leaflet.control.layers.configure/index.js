@@ -469,7 +469,7 @@ function enableConfig(control, {layers, customLayersOrder}) {
 
 /* eslint-disable max-len */
                 const formHtml = `<b><u>Change layer opacity</u></b><br><br>
-<label>New opacity: &nbsp;<input type="number" data-bind="value: opacity" min="0" max="100" step="1"></input>%</label><br/>
+<label>New opacity: &nbsp;<input type="range" data-bind="value: opacity" min="0" max="100" />%</label><br/>
 <br>
 <div data-bind="foreach: buttons">
     <a class="button" data-bind="click: $root.buttonClicked.bind(null, $index()), text: caption"></a>

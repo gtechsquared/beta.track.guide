@@ -75,6 +75,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "@mapbox/polyline": "^1.2.1",
     "@sentry/browser": "^6.19.7",
     "alertify.js": "^1.0.12",
     "blueimp-md5": "^2.19.0",
@@ -87,6 +88,7 @@
     "leaflet-rotatedmarker": "^0.2.0",
     "load-script": "^2.0.0",
     "mapillary-js": "4.1.1",
+    "openrouteservice-js": "^0.4.0",
     "pbf": "^3.0.5",
     "rbush": "^3.0.1",
     "regenerator-runtime": "^0.13.11",

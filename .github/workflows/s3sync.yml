@@ -36,7 +36,8 @@ jobs:
             mapillary4: '${{ secrets.MAPILLARY_KEY}}',
             flickr: '${{ secrets.FLICKER_KEY}}',
             google: '${{ secrets.GOOGLE_KEY}}',
-            mapyCz: '${{ secrets.MAPYCZ_KEY}}'
+            mapyCz: '${{ secrets.MAPYCZ_KEY}}',
+            openRouteKey: '${{secrets.OPENROUTE_KEY}}'
           };
 
           export default secrets;

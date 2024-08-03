@@ -4,6 +4,7 @@ const topLevelFiles = ['src/index.js'];
 const filesWithSideEffects = [
     'src/lib/knockout.component.progress/progress.js',
     'src/lib/leaflet.control.azimuth/index.js',
+    'src/lib/leaflet.control.openroute/index.js',
     'src/lib/leaflet.control.caption/index.js',
     'src/lib/leaflet.control.coordinates/index.js',
     'src/lib/leaflet.control.betterscale/index.js',
