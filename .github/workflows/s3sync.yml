@@ -57,7 +57,7 @@ jobs:
           fi
       - name: Update index.html with new gtag ID
         run: |
-          sed -i 's/{{GTAG_ID}}/${{ secrets.GTAG_ID }}/g' build/index.html
+          sed -i 's/{{GTAG_ID}}/${{ env.GTAG_ID }}/g' build/index.html
       - name: Set S3 Bucket
         id: set_s3_bucket
         run: |
