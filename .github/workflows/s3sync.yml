@@ -45,6 +45,19 @@ jobs:
         env:
           CI: true   
       - run: NODE_ENV=production yarn run build --if-present
+      - name: Extract branch name
+        shell: bash
+        run: echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+      - name: Set GTAG_ID based on branch
+        run: |
+          if [[ "$BRANCH" == "production" ]]; then
+            echo "GTAG_ID=${{ secrets.GTAG_ID_PROD }}" >> $GITHUB_ENV
+          else
+            echo "GTAG_ID=${{ secrets.GTAG_ID_BETA }}" >> $GITHUB_ENV
+          fi
+      - name: Update index.html with new gtag ID
+        run: |
+          sed -i 's/{{GTAG_ID}}/${{ secrets.GTAG_ID }}/g' build/index.html
       - name: Set S3 Bucket
         id: set_s3_bucket
         run: |
