@@ -63,7 +63,8 @@ suite('Load tracks from services');
     // 'etomesto_not_exists',
     // 'tracedetrail_with_title',
     // 'tracedetrail_private',
-    // 'tracedetrail_not_exists',
+    'tracedetrail_not_exists',
+
     'sportstracker_with_title',
     'sportstracker_without_title',
     'sportstracker_private',
@@ -71,7 +72,7 @@ suite('Load tracks from services');
     // 'openstreetmapRu',
     // 'openstreetmapRuGpx',
     // 'openstreetmapRu_not_exists',
-    'wikiloc_not_exists',
+    // 'wikiloc_not_exists',
     // 'wikiloc_with_waypoints',
     // 'wikiloc',
 ].forEach(function (testcase) {
