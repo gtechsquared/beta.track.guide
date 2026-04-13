@@ -22,8 +22,8 @@ class LayerGroupWithOptions extends L.LayerGroup {
 
     const layersDefs = [
                 {
-                    title: 'OpenStreetMap1',
-                    description: ' (OSM default style)',
+                    title: 'OpenStreetMap',
+                    description: ' (OSM1 default style)',
                     isDefault: true,
                     layer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                         {
