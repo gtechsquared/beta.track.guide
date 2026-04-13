@@ -33,6 +33,7 @@ class LayerGroupWithOptions extends L.LayerGroup {
                             print: true,
                             jnx: true,
                             shortName: 'osm',
+                            referrerPolicy: 'strict-origin', 
                             attribution: '<a href="https://www.openstreetmap.org/copyright">' +
                                 '&copy; OpenStreetMap contributors</a>',
                         }
