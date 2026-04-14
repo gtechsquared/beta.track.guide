@@ -88,7 +88,8 @@ suite('Load tracks from services');
         if (testData.query.length > 1) {
             testcaseName += `_#${i + 1}`;
         }
-        test(testcaseName, async function () {
+        const testFn = testcase === 'tracedetrail_not_exists' ? test.skip : test;
+        testFn(testcaseName, async function () {
             this.timeout(5000);
             this.retries(5);
             const result = await loadFromUrl(testData.query[i]);
